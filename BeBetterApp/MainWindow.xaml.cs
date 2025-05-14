@@ -19,6 +19,7 @@ namespace BeBetterApp
         public MainWindow()
         {
             InitializeComponent();
+            Console.WriteLine("halo");
         }
     }
 }
