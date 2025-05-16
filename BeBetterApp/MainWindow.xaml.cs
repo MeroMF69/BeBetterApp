@@ -21,6 +21,7 @@ namespace BeBetterApp
             InitializeComponent();
             Console.WriteLine("halo");
             Console.WriteLine("Hallo23577");
+            Console.WriteLine("TestNigga");
         }
     }
 }
