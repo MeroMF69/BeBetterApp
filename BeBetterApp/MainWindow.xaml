@@ -19,9 +19,9 @@
     <Border CornerRadius="10" BorderThickness="1">
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="LightGray" Offset="0" />
-                <GradientStop Color="Gray" Offset="0.5" />
-                <GradientStop Color="DarkGray" Offset="1" />
+                <GradientStop Color="{StaticResource winBorderColor1}" Offset="0" />
+                <GradientStop Color="{StaticResource winBorderColor2}" Offset="0.5" />
+                <GradientStop Color="{StaticResource winBorderColor3}" Offset="1" />
             </LinearGradientBrush>
         </Border.BorderBrush>
 
