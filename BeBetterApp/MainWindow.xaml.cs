@@ -22,6 +22,7 @@ namespace BeBetterApp
             Console.WriteLine("halo");
             Console.WriteLine("Hallo23577");
             Console.WriteLine("TestNigga");
+            Console.WriteLine("kommmm");
         }
     }
 }
