@@ -20,7 +20,7 @@ namespace BeBetterApp
         {
             InitializeComponent();
             Console.WriteLine("halo");
-            Console.WriteLine("Hallo234");
+            Console.WriteLine("Hallo235s");
         }
     }
 }
