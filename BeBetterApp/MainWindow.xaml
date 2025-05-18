@@ -108,7 +108,7 @@
                     <RadioButton Style="{StaticResource menuButton}"
                                  Command="{Binding ShowFitnessViewCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Icons/fitness.png" Width="24" Height="24" Margin="5"/>
+                            <Image Source="pack://application:,,,/Icons/fitness.png" Width="24" Height="24" Margin="5"/>
                             <TextBlock Text="Fitness" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
@@ -117,7 +117,7 @@
                     <RadioButton Style="{StaticResource menuButton}"
                                  Command="{Binding ShowNutritionViewCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Icons/food.png" Width="24" Height="24" Margin="5"/>
+                            <Image Source="pack://application:,,,/Icons/food.png" Width="24" Height="24" Margin="5"/>
                             <TextBlock Text="Ernährung" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
@@ -126,7 +126,7 @@
                     <RadioButton Style="{StaticResource menuButton}"
                                  Command="{Binding ShowOrganisationViewCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Icons/organisation.png" Width="24" Height="24" Margin="5"/>
+                            <Image Source="pack://application:,,,/Icons/organisation.png" Width="24" Height="24" Margin="5"/>
                             <TextBlock Text="Organisation" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
@@ -155,9 +155,14 @@
                                 Orientation="Horizontal"
                                 FlowDirection="RightToLeft"
                                 Background="Transparent"
-                                Margin="0,0,5,0"
-                                MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown"
-                                MouseEnter="pnlControlBar_MouseEnter"/>
+                                Margin="0,0,5,0"></StackPanel>
+                            
+                    <Image Grid.Row="1"
+               Source="Icons/bebetter.png"
+               Stretch="Uniform"
+               Width="952"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top" Margin="58,17,0,0" Height="926" Grid.RowSpan="2"/>
                 </Grid>
             </Border>
         </Grid>

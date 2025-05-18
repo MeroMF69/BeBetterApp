@@ -9,7 +9,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Icons\" />
+    <None Remove="Icons\bebetter.png" />
+    <None Remove="Icons\fitness.png" />
+    <None Remove="Icons\food.png" />
+    <None Remove="Icons\organisation.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\bebetter.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\fitness.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\food.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\organisation.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
