@@ -21,5 +21,23 @@ namespace BeBetterApp
             InitializeComponent();
             
         }
+
+     
+
+        private void Button_Fitness(object sender, RoutedEventArgs e)
+        {
+            WindowSelect window = new WindowSelect();
+            window.Show();
+        }
+
+        private void Button_Ernaehrung(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
