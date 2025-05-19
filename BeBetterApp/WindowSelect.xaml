@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BeBetterApp"
         mc:Ignorable="d"
-        Title="WindowSelect" Height="450" Width="800">
+        Title="WindowSelect" Height="700" Width="1300">
     <Grid>
-        
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Einzelne Körpterteile trainieren" Width="550" Height="140" Margin="70" FontSize="38"/>
+            <Button Content="Erstelle einen Fitnessplan" Width="550" Height="140" FontSize="40"/>
+        </StackPanel>
     </Grid>
 </Window>

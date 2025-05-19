@@ -94,7 +94,7 @@
                 <StackPanel>
                     <!-- Logo -->
                     <StackPanel Orientation="Horizontal" Height="35" Margin="15,25,0,40">
-                        <Image Source="Icons/fitness.png" Height="30"/>
+                        <Image Source="Icons/bebetter.png" Height="30"/>
                         <TextBlock Text="Be Better"
                                    Foreground="{StaticResource titleColor2}"
                                    FontSize="20"
