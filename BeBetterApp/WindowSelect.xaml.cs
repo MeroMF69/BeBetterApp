@@ -25,7 +25,7 @@ namespace BeBetterApp
     /// </summary>
     public partial class WindowSelect : Window
     {
-        private static readonly string apiKey = "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";
+        private static readonly string tt = "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";
         private static readonly string endpoint = "https://api.openai.com/v1/chat/completions";
 
         string Texttest = "shallo";
