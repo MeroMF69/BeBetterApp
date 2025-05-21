@@ -49,5 +49,15 @@ namespace BeBetterApp
         {
 
         }
+
+        private void Button_Quit(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Saved(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
