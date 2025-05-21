@@ -8,8 +8,19 @@
         Title="WindowSelect" Height="700" Width="1300">
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Content="Einzelne Körpterteile trainieren" Width="550" Height="140" Margin="70" FontSize="38"/>
-            <Button Content="Erstelle einen Fitnessplan" Width="550" Height="140" FontSize="40"/>
+            <Button Content="Einzelne Körpterteile trainieren" Width="550" Height="140" Margin="70" FontSize="38" Click="Button_Click_Erstell_ein_Fitnessplan"/>
+            <Button Content="Erstelle einen Fitnessplan" Width="550" Height="140" FontSize="40" />
         </StackPanel>
+        <TextBlock x:Name="Textblock_Text"
+           Text="hallo"
+           TextWrapping="Wrap"
+           FontSize="20"
+           Margin="30"
+           Width="800"
+           Height="300"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Bottom"
+           Background="LightGray"
+           Padding="10"/>
     </Grid>
 </Window>
