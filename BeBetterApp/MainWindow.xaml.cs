@@ -52,7 +52,7 @@ namespace BeBetterApp
 
         private void Button_Quit(object sender, RoutedEventArgs e)
         {
-
+            this.Close();   
         }
     }
 }

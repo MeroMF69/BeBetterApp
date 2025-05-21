@@ -5,11 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BeBetterApp"
         mc:Ignorable="d"
-        Title="WindowSelect" Height="700" Width="1300">
+        Title="WindowSelect" Height="700" Width="1300"
+        WindowStartupLocation="CenterScreen"
+        Background="#FF1B1446">
+
+    <Window.Resources>
+        <!-- Farben -->
+        <SolidColorBrush x:Key="titleColor2" Color="White"/>
+        <SolidColorBrush x:Key="color1" Color="#FFB3E5FC"/>
+        <SolidColorBrush x:Key="color2" Color="#FFB2DFDB"/>
+
+        <!-- Runder Button-Stil mit Farbverlauf und Hover -->
+        <Style x:Key="roundMenuButton" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="{StaticResource color1}"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="20"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#33FFFFFF"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#22FFFFFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Margin" Value="15"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Content="Einzelne Körpterteile trainieren" Width="550" Height="140" Margin="70" FontSize="38" Click="Button_Click"/>
-            <Button Content="Erstelle einen Fitnessplan" Width="550" Height="140" FontSize="40"/>
+            <Button Content="Einzelne Körperteile trainieren"
+                    Width="550" Height="140"
+                    Style="{StaticResource roundMenuButton}"
+                    Click="Button_Click"/>
+
+            <Button Content="Erstelle einen Fitnessplan"
+                    Width="550" Height="140"
+                    Style="{StaticResource roundMenuButton}"/>
         </StackPanel>
     </Grid>
 </Window>
+
