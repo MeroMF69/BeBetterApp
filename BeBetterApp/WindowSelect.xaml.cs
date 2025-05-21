@@ -45,7 +45,7 @@ namespace BeBetterApp
 
             var requestBody = new
             {
-                model = "gpt-3.5-turbo", // GPT-4 gegen GPT-3.5 ersetzt
+                model = "gpt-4", // GPT-4 gegen GPT-3.5 ersetzt
                 messages = new[]
                 {
             new { role = "user", content = "Erstelle mir einen Fitnessplan bitte" }
@@ -53,7 +53,7 @@ namespace BeBetterApp
             };
 
             var json = JsonSerializer.Serialize(requestBody);
-            var content = new StringContent(json, Encoding.UTF8 , "application/json");
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             try
             {
@@ -78,10 +78,11 @@ namespace BeBetterApp
                     if (!string.IsNullOrWhiteSpace(reply))
                     {
                         // Speicherort: Desktop
-                        //string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Fitnessplan.csv");
+                        string path = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Fitnessplan.csv");
 
-                        //File.WriteAllText(path, reply);
-                        //Textblock_Text.Text = $"Fitnessplan gespeichert auf dem Desktop:\n{path}";
+
+                        File.WriteAllText(path, reply);
+                        Textblock_Text.Text = $"Fitnessplan gespeichert auf dem Desktop:\n{path}";
                     }
                     else
                     {
