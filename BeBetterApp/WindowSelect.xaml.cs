@@ -53,7 +53,7 @@ namespace BeBetterApp
             };
 
             var json = JsonSerializer.Serialize(requestBody);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var content = new StringContent(json, Encoding.UTF8 , "application/json");
 
             try
             {

@@ -19,7 +19,12 @@ namespace BeBetterApp
         public MainWindow()
         {
             InitializeComponent();
-            
+
+            // Volbildschirm 
+            this.WindowState = WindowState.Maximized;
+            this.WindowStyle = WindowStyle.None;
+            this.ResizeMode = ResizeMode.NoResize;
+
         }
 
      
