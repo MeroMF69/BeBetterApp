@@ -19,7 +19,12 @@ namespace BeBetterApp
         public MainWindow()
         {
             InitializeComponent();
-            
+
+            // Volbildschirm 
+            this.WindowState = WindowState.Maximized;
+            this.WindowStyle = WindowStyle.None;
+            this.ResizeMode = ResizeMode.NoResize;
+
         }
 
      
@@ -36,6 +41,16 @@ namespace BeBetterApp
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Saved(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Quit(object sender, RoutedEventArgs e)
         {
 
         }

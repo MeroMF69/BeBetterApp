@@ -6,11 +6,12 @@
         xmlns:local="clr-namespace:BeBetterApp"
         xmlns:viewModel="clr-namespace:BeBetterApp.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1300"
+        Title="MainWindow" 
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True"
+        WindowState="Maximized">
 
     <Window.Resources>
         <!-- Farben -->
@@ -76,95 +77,110 @@
             </LinearGradientBrush>
         </Border.BorderBrush>
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+        <!-- Viewbox mit UniformToFill -->
+        <Viewbox Stretch="UniformToFill">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <!-- Sidebar -->
-            <Border CornerRadius="10,0,0,10" Grid.Column="0">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
-                        <GradientStop Color="{StaticResource secondaryBackColor1}" Offset="0"/>
-                        <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
+                <!-- Sidebar -->
+                <Border CornerRadius="10,0,0,10" Grid.Column="0">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
+                            <GradientStop Color="{StaticResource secondaryBackColor1}" Offset="0"/>
+                            <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
 
-                <StackPanel>
-                    <!-- Logo -->
-                    <StackPanel Orientation="Horizontal" Height="35" Margin="15,25,0,40">
-                        <Image Source="Icons/bebetter.png" Height="30"/>
-                        <TextBlock Text="Be Better"
+                    <StackPanel>
+                        <!-- Logo -->
+                        <StackPanel Orientation="Horizontal" Height="35" Margin="15,25,0,40">
+                            <Image Source="Icons/bebetter.png" Height="30"/>
+                            <TextBlock Text="Be Better"
                                    Foreground="{StaticResource titleColor2}"
                                    FontSize="20"
                                    FontFamily="Montserrat"
                                    FontWeight="Medium"
                                    VerticalAlignment="Center"
                                    Margin="10,0,0,0"/>
-                    </StackPanel>
-
-                    <!-- Fitness -->
-                    <RadioButton Style="{StaticResource menuButton}"
-                                 Checked="Button_Fitness">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="pack://application:,,,/Icons/fitness.png" Width="24" Height="24" Margin="5"/>
-                            <TextBlock Text="Fitness" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
-                    </RadioButton>
 
-                    <!-- Ernährung -->
-                    <RadioButton Style="{StaticResource menuButton}"
+                        <!-- Fitness -->
+                        <RadioButton Style="{StaticResource menuButton}" Checked="Button_Fitness">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="pack://application:,,,/Icons/fitness.png" Width="24" Height="24" Margin="5"/>
+                                <TextBlock Text="Fitness" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+
+                        <!-- Ernährung -->
+                        <RadioButton Style="{StaticResource menuButton}"
                                  Command="{Binding ShowNutritionViewCommand}" Checked="Button_Ernaehrung">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="pack://application:,,,/Icons/food.png" Width="24" Height="24" Margin="5"/>
-                            <TextBlock Text="Ernährung" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="pack://application:,,,/Icons/food.png" Width="24" Height="24" Margin="5"/>
+                                <TextBlock Text="Ernährung" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
 
-                    <!-- Organisation -->
-                    <RadioButton Style="{StaticResource menuButton}"
+                        <!-- Organisation -->
+                        <RadioButton Style="{StaticResource menuButton}"
                                  Command="{Binding ShowOrganisationViewCommand}" Checked="RadioButton_Checked">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="pack://application:,,,/Icons/organisation.png" Width="24" Height="24" Margin="5"/>
-                            <TextBlock Text="Organisation" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-                </StackPanel>
-            </Border>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="pack://application:,,,/Icons/organisation.png" Width="24" Height="24" Margin="5"/>
+                                <TextBlock Text="Organisation" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
 
-            <!-- Main Content -->
-            <Border CornerRadius="0,10,10,0" Grid.Column="1">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
-                        <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
-                        <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
 
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="25"/>
-                        <RowDefinition Height="35"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
+                        
+                        <RadioButton Style="{StaticResource menuButton}"
+                                Command="{Binding ShowNutritionViewCommand}" Checked="Button_Saved">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Icons/save.png" Width="24" Height="24" Margin="5"/>
+                                <TextBlock Text="Gespeichert" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
 
-                    <!-- Control bar -->
-                    <StackPanel x:Name="pnlControlBar"
-                                Grid.Row="0"
-                                Orientation="Horizontal"
-                                FlowDirection="RightToLeft"
-                                Background="Transparent"
-                                Margin="0,0,5,0"></StackPanel>
-                            
-                    <Image Grid.Row="1"
-               Source="Icons/bebetter.png"
-               Stretch="Uniform"
-               Width="952"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Top" Margin="58,17,0,0" Height="926" Grid.RowSpan="2"/>
-                </Grid>
-            </Border>
-        </Grid>
+                        <RadioButton Style="{StaticResource menuButton}"
+                                Command="{Binding ShowNutritionViewCommand}" Checked="Button_Quit">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Icons/close.png" Width="24" Height="24" Margin="5"/>
+                                <TextBlock Text="Beenden" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+
+
+                    </StackPanel>
+                </Border>
+
+                <!-- Main Content -->
+                <Border CornerRadius="0,10,10,0" Grid.Column="1">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                            <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
+                            <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="400"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="500"/>
+                        </Grid.ColumnDefinitions>
+   
+                    </Grid>
+
+                </Border>
+            </Grid>
+        </Viewbox>
     </Border>
 </Window>
+
+
+   

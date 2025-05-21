@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace BeBetterApp
 {
     /// <summary>
-    /// Interaction logic for WindowSelect.xaml
+    /// Interaction logic for WindowEinzelneKorperteile.xaml
     /// </summary>
-    public partial class WindowSelect : Window
+    public partial class WindowEinzelneKorperteile : Window
     {
-        public WindowSelect()
+        public WindowEinzelneKorperteile()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
