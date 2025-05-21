@@ -78,7 +78,7 @@ namespace BeBetterApp
                     if (!string.IsNullOrWhiteSpace(reply))
                     {
                         // Speicherort: Desktop
-                        string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Fitnessplan.csv");
+                        // string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Fitnessplan.csv");
 
                         File.WriteAllText(path, reply);
                         Textblock_Text.Text = $"Fitnessplan gespeichert auf dem Desktop:\n{path}";
