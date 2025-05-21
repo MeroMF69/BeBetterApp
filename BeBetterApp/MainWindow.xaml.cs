@@ -45,7 +45,7 @@ namespace BeBetterApp
 
         }
 
-        private void Button_Saved(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -53,6 +53,11 @@ namespace BeBetterApp
         private void Button_Quit(object sender, RoutedEventArgs e)
         {
             this.Close();   
+        }
+
+        private void Button_Saved(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

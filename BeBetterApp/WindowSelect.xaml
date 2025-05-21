@@ -58,6 +58,17 @@
                     Width="550" Height="140"
                     Style="{StaticResource roundMenuButton}"/>
         </StackPanel>
+        <TextBlock x:Name="Textblock_Text"
+           Text="hallo"
+           TextWrapping="Wrap"
+           FontSize="20"
+           Margin="30"
+           Width="800"
+           Height="300"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Bottom"
+           Background="LightGray"
+           Padding="10"/>
     </Grid>
 </Window>
 
