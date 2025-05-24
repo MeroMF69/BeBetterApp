@@ -27,14 +27,79 @@ namespace BeBetterApp
     {
         public WindowSelect()
         {
-            InitializeComponent(); // das verbindet XAML mit dem Code
-            
+
+            InitializeComponent();
+            //Textblock_Text.Text = Texttest;
+ 
         }
         
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            WindowTrainingsplanerstellung window = new WindowTrainingsplanerstellung();
-            window.Show();
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+
+            var requestBody = new
+            {
+                model = "gpt-4", // GPT-4 gegen GPT-3.5 ersetzt
+                messages = new[]
+                {
+            new { role = "user", content = "Erstelle mir einen Fitnessplan bitte" }
         }
+            };
+
+            var json = JsonSerializer.Serialize(requestBody);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            try
+            {
+                var response = await client.PostAsync(endpoint, content);
+                var responseString = await response.Content.ReadAsStringAsync();
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    Textblock_Text.Text = $"Fehler: {response.StatusCode} - {response.ReasonPhrase}\n{responseString}";
+                    return;
+                }
+
+                using JsonDocument doc = JsonDocument.Parse(responseString);
+
+                if (doc.RootElement.TryGetProperty("choices", out JsonElement choices))
+                {
+                    string reply = choices[0]
+                        .GetProperty("message")
+                        .GetProperty("content")
+                        .GetString();
+
+                    if (!string.IsNullOrWhiteSpace(reply))
+                    {
+                        // Speicherort: Desktop
+                        string path = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Fitnessplan.csv");
+
+
+                        File.WriteAllText(path, reply);
+                        Textblock_Text.Text = $"Fitnessplan gespeichert auf dem Desktop:\n{path}";
+                    }
+                    else
+                    {
+                        Textblock_Text.Text = "Antwort ist leer – nichts gespeichert.";
+                    }
+                }
+                else if (doc.RootElement.TryGetProperty("error", out JsonElement error))
+                {
+                    string errorMessage = error.GetProperty("message").GetString();
+                    Textblock_Text.Text = $"API-Fehler: {errorMessage}";
+                }
+                else
+                {
+                    Textblock_Text.Text = "Unbekannte Antwortstruktur:\n" + responseString;
+                }
+            }
+            catch (Exception ex)
+            {
+                Textblock_Text.Text = "Fehler beim Speichern:\n" + ex.ToString();
+            }
+        }
+
+
     }
 }
