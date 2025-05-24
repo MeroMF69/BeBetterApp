@@ -18,6 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="OpenAI" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Icons\bebetter.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

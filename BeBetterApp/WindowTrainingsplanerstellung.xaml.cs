@@ -11,30 +11,24 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json;
-using System.IO;
 
 namespace BeBetterApp
 {
     /// <summary>
-    /// Interaction logic for WindowSelect.xaml
+    /// Interaction logic for WindowTrainingsplanerstellung.xaml
     /// </summary>
-    public partial class WindowSelect : Window
+    public partial class WindowTrainingsplanerstellung : Window
     {
-        public WindowSelect()
+        public WindowTrainingsplanerstellung()
         {
-            InitializeComponent(); // das verbindet XAML mit dem Code
-            
+            InitializeComponent();
         }
-        
+
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            WindowTrainingsplanerstellung window = new WindowTrainingsplanerstellung();
-            window.Show();
+            KIKlasse kI = new KIKlasse();
+            kI.Ki(Ausgabe);
+
         }
     }
 }
