@@ -52,7 +52,54 @@ namespace BeBetterApp
         {
 
             KIKlasse kI = new KIKlasse();
-            kI.Ki(Ausgabe);
+
+            Gewicht.Background = null;
+            Größe.Background = null;
+
+            bool erlaubniss1 = false;
+            bool erlaubniss2 = false;
+            bool erlaubniss3 = false;
+
+            try
+            {
+                int gewicht = int.Parse(Gewicht.Text);
+                erlaubniss1 = true;
+            }
+            catch
+            {
+                MessageBox.Show("Bitte geben Sie nur Zahlen ein bei der Gewichtseingabe!");
+                Gewicht.Background = Brushes.LightCoral;
+            }
+
+            try
+            {
+                int gewicht = int.Parse(Größe.Text);
+                erlaubniss2 = true;
+            }
+            catch
+            {
+                MessageBox.Show("Bitte geben Sie nur Zahlen win bei der Größeneingabe!");
+                Größe.Background = Brushes.LightCoral;
+            }
+
+            if (preferänz.Text == null || preferänz.Text == "")
+            {
+                MessageBox.Show("Bitte wählen Sie Ihre präferenz aus!");
+            }
+            else
+            {
+                erlaubniss3 = true;
+            }
+
+
+            if (erlaubniss1 == true && erlaubniss2 == true && erlaubniss3 == true)
+            {
+                string aufforderung = $"Gib mir ein Trainungsplan wo ich {preferänz.Text} kann für eine woche. Ich bin {Gewicht.Text} schwer und {Größe.Text}cm groß. Gib nur den Plan nichts dazu schreiben oder so ** hinzufügen ein komplett normaler Text. Danke!";
+
+                kI.Ki(Ausgabe, aufforderung);
+            }
+
+
 
         }
     }
