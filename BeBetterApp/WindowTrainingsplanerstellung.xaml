@@ -5,16 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BeBetterApp"
         mc:Ignorable="d"
-        Title="WindowTrainingsplanerstellung" Height="450" Width="800">
+        Title="WindowTrainingsplanerstellung" Height="450" Width="800" Background ="#FF1B1446"
+        WindowStyle="none"
+        WindowState="Maximized">
     <Grid>
-        <TextBox x:Name="Gewicht" Height="50" Width="150" Margin="43,53,607,331"   />
-        <TextBox x:Name="Größe" Height="50" Width="150" Margin="250,53,400,331"   />
-        <ComboBox x:Name="preferänz" Height="50" Width="150" Margin="454,53,196,331" >
-            <ComboBoxItem Content="abnehmen"></ComboBoxItem>
-            <ComboBoxItem Content="muskelaufbau"></ComboBoxItem>
-        </ComboBox>
-        <Button Content="Erstellen" HorizontalAlignment="Left" Margin="673,68,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <TextBox x:Name="Ausgabe" HorizontalAlignment="Center" Margin="0,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="660" Height="288" />
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="Gewicht" Height="50" Width="150" Grid.Row="0" Text="Gewicht" FontSize="31" Background="#FF1B1446" Foreground="White" GotFocus="Gewicht_GotFocus"  />
+            <TextBox x:Name="Größe" Height="50" Width="150" Grid.Row="0" Background="#FF1B1446" Foreground="White"  />
+            <ComboBox x:Name="preferänz" Height="50" Width="150" Grid.Row="0" Background="#FF1B1446" Foreground="White">
+                <ComboBoxItem Content="abnehmen"></ComboBoxItem>
+                <ComboBoxItem Content="muskelaufbau"></ComboBoxItem>
+            </ComboBox>
+            <Button Content="Erstellen" HorizontalAlignment="Left" Grid.Row="0"  Height="50" Width="150" Click="Button_Click" Background="#FF1B1446" Foreground="White"/>
+        </StackPanel>
+        
+        <TextBox x:Name="Ausgabe" HorizontalAlignment="Center" Grid.Row="1"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="660" Height="288" Background="#FF1B1446" Foreground="White"  />
 
     </Grid>
 </Window>

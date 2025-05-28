@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -15,12 +16,13 @@ namespace BeBetterApp
 {
     class KIKlasse()
     {
+
         public void Ki(TextBox ausgabe, string aufforderung)
         {
             
             ausgabe.Text = "Ihr Trainigsplan wird erstellt bitte warten!"; // Dass der Nutzer weiß dass es geladen wird
 
-            ChatClient client = new(model: "gpt-4o", apiKey: "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"); 
+            ChatClient client = new(model: "gpt-4o", apiKey: Properties.Settings.Default.OPENAI_KEY); 
             // Hier ist mein API Key und welche version von Chat gpt es benutzen soll
 
             ChatCompletion completion = client.CompleteChat(aufforderung); 
