@@ -13,6 +13,7 @@
     <None Remove="Icons\close.png" />
     <None Remove="Icons\fitness.png" />
     <None Remove="Icons\food.png" />
+    <None Remove="Icons\HumanBody.png" />
     <None Remove="Icons\organisation.png" />
     <None Remove="Icons\save.png" />
   </ItemGroup>
@@ -32,6 +33,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\food.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\HumanBody.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\organisation.png">

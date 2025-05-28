@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace BeBetterApp
 {
     /// <summary>
-    /// Interaction logic for WindowEinzelneKorperteile.xaml
+    /// Interaction logic for WindowEinzelneKoerperteileTrainieren.xaml
     /// </summary>
-    public partial class WindowEinzelneKorperteile : Window
+    public partial class WindowEinzelneKoerperteileTrainieren : Window
     {
-        public WindowEinzelneKorperteile()
+        public WindowEinzelneKoerperteileTrainieren()
         {
             InitializeComponent();
         }
