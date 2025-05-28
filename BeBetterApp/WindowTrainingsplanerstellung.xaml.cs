@@ -23,6 +23,7 @@ namespace BeBetterApp
     {
         public WindowTrainingsplanerstellung()
         {
+
             InitializeComponent();
             if (File.Exists("Trainingsplan.js"))
             {
