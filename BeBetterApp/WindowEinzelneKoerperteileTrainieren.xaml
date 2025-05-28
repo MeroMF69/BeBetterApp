@@ -12,7 +12,6 @@
         AllowsTransparency="True">
 
     <Window.Resources>
-        <!-- Farben -->
         <Color x:Key="winBorderColor1">#FF1B1446</Color>
         <Color x:Key="winBorderColor2">#FF1B1446</Color>
         <Color x:Key="winBorderColor3">#FF1B1446</Color>
@@ -27,16 +26,14 @@
         <SolidColorBrush x:Key="color1" Color="#FFB3E5FC"/>
         <SolidColorBrush x:Key="color2" Color="#FFB2DFDB"/>
     </Window.Resources>
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-
-
-
+        
         <Border Grid.Column="0">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
@@ -44,9 +41,33 @@
                     <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Image Source="pack://application:,,,/Icons/HumanBody.png"/>
+
+            <Grid>
+                
+                <Image Source="pack://application:,,,/Icons/HumanBody.png" Stretch="Uniform"/>
+
+                
+                <Button Width="100" Height="120" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,352,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click">
+                    
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Rectangle Fill="Transparent"/>
+
+                                <TextBlock x:Name="HoverText" Text="Bauchmuskel" Foreground="White" Background="#AA000000" Padding="4" FontWeight="Bold" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="HoverText" Property="Visibility" Value="Visible"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
         </Border>
 
+        <!-- Rechte Seite für Inhalte -->
         <Border CornerRadius="0,10,10,0" Grid.Column="1">
             <Border.Background>
                 <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
@@ -65,15 +86,8 @@
                     <ColumnDefinition Width="500"/>
                 </Grid.ColumnDefinitions>
 
+                <!-- Weitere Inhalte hier -->
             </Grid>
-
         </Border>
-
-        
-
-
-
-
-
     </Grid>
 </Window>
