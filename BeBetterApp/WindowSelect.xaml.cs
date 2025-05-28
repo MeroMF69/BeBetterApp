@@ -26,7 +26,9 @@ namespace BeBetterApp
 
         private void Button_Koerperteile(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
+            WindowEinzelneKoerperteileTrainieren windowEinzelneKoerperteileTrainieren = new WindowEinzelneKoerperteileTrainieren();
+            windowEinzelneKoerperteileTrainieren.Show();
         }
 
         private void Button_erstellePlan(object sender, RoutedEventArgs e)
