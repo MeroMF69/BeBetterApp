@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="WindowSelect" Height="700" Width="1300"
         WindowStartupLocation="CenterScreen"
-        Background="#FF1B1446">
+        Background="#FF1B1446"
+        WindowStyle="none"
+        WindowState="Maximized">
 
     <Window.Resources>
         <!-- Style wie menuButton aus MainWindow -->
@@ -47,11 +49,13 @@
             <Button Content="Einzelne Körperteile trainieren"
                     Width="550" Height="140"
                     Style="{StaticResource roundMenuButton}"
-                    Click="Button_Click"/>
+                    Click="Button_Koerperteile"/>
 
             <Button Content="Erstelle einen Fitnessplan"
                     Width="550" Height="140"
-                    Style="{StaticResource roundMenuButton}" Click="Button_Click"/>
+                    Style="{StaticResource roundMenuButton}" Click="Button_erstellePlan"/>
         </StackPanel>
+
+        <Button Content="Zurück" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Width="200" Height="60" FontSize="20" Click="Button_zuruck" Style="{StaticResource roundMenuButton}"/>
     </Grid>
 </Window>
