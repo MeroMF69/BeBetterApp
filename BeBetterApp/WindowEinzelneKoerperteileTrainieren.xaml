@@ -33,7 +33,7 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        
+
         <Border Grid.Column="0">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
@@ -43,12 +43,12 @@
             </Border.Background>
 
             <Grid>
-                
+
                 <Image Source="pack://application:,,,/Icons/HumanBody.png" Stretch="Uniform"/>
 
-                
-                <Button Width="100" Height="120" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,352,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click">
-                    
+
+                <Button Width="100" Height="120" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,367,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click">
+
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
