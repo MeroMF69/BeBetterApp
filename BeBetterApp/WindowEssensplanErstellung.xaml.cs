@@ -13,21 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 
-
 namespace BeBetterApp
 {
     /// <summary>
-    /// Interaction logic for WindowTrainingsplanerstellung.xaml
+    /// Interaction logic for WindowEssensplanErstellung.xaml
     /// </summary>
-    public partial class WindowTrainingsplanerstellung : Window
+    public partial class WindowEssensplanErstellung : Window
     {
-        public WindowTrainingsplanerstellung()
+        public WindowEssensplanErstellung()
         {
-
             InitializeComponent();
-            if (File.Exists("Essensplan.js"))
+            if (File.Exists("Trainingsplan.js"))
             {
-                string jetzigerplan = File.ReadAllText("Essensplan.js");
+                string jetzigerplan = File.ReadAllText("Trainingsplan.js");
 
                 if (!string.IsNullOrWhiteSpace(jetzigerplan))
                 {
@@ -43,12 +41,12 @@ namespace BeBetterApp
             {
                 if (Ausgabe.Text == "" || Ausgabe.Text == null)
                 {
-                    Ausgabe.Text = ("Hier können Sie Ihr Essensplan erstellen! Füllen Sie Ihre Daten aus und los gehts!");
+                    Ausgabe.Text = ("Hier können Sie Ihr Trainingsplan erstellen! Füllen Sie Ihre Daten aus und los gehts!");
                 }
 
             }
 
-            if(Gewicht.Text == "")
+            if (Gewicht.Text == "")
             {
                 Gewicht.Text = "Gewicht";
             }
@@ -102,7 +100,7 @@ namespace BeBetterApp
             {
                 string aufforderung = $"Gib mir ein Essensplan wo ich {preferänz.Text} kann für eine woche. Ich bin {Gewicht.Text} schwer und {Größe.Text}cm groß. Gib nur den Plan nichts dazu schreiben oder so ** hinzufügen ein komplett normaler Text. Danke!";
 
-                kI.Ki(Ausgabe, aufforderung, "Essensplan.js");
+                kI.Ki(Ausgabe, aufforderung, "Trainingsplan.js");
             }
 
 
@@ -116,6 +114,6 @@ namespace BeBetterApp
         {
             Gewicht.Text = string.Empty;
         }
-
     }
-}
+   }
+

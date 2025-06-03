@@ -37,7 +37,8 @@ namespace BeBetterApp
 
         private void Button_Ernaehrung(object sender, RoutedEventArgs e)
         {
-
+            Ernaerungselect ernaerungselect = new Ernaerungselect();
+            ernaerungselect.Show();
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
