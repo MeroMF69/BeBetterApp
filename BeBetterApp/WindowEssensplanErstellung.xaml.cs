@@ -41,7 +41,7 @@ namespace BeBetterApp
             {
                 if (Ausgabe.Text == "" || Ausgabe.Text == null)
                 {
-                    Ausgabe.Text = ("Hier können Sie Ihr Trainingsplan erstellen! Füllen Sie Ihre Daten aus und los gehts!");
+                    Ausgabe.Text = ("Hier können Sie Ihr Essensplan erstellen! Füllen Sie Ihre Daten aus und los gehts!");
                 }
 
             }
