@@ -26,6 +26,7 @@ namespace BeBetterApp
 
         private void Button_erstellePlan(object sender, RoutedEventArgs e)
         {
+            this.Close();
             WindowEssensplanErstellung windowEssensplanErstellung = new WindowEssensplanErstellung();
             windowEssensplanErstellung.Show();
         }
@@ -39,7 +40,9 @@ namespace BeBetterApp
 
         private void Button_Koerperteile(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
+            Kalorienzähler kalorienzähler = new Kalorienzähler();
+            kalorienzähler.Show();
         }
     }
 }
