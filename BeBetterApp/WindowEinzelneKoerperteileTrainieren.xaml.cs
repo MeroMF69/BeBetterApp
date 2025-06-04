@@ -26,7 +26,27 @@ namespace BeBetterApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Es geht!!!");
+            
+        }
+
+        private void Button_Click_Brust(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_Bizep(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_Trizep(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_Schulter(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
