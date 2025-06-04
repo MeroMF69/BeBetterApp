@@ -207,16 +207,14 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="400"/>
+                   
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="500"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <ContentControl x:Name="RightContentArea"
-                        Grid.Row="0" Grid.Column="0"
-                        Margin="10" />
+                <ContentControl x:Name="RightContentArea" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Grid.Column="0" Margin="10" />
             </Grid>
         </Border>
     </Grid>
