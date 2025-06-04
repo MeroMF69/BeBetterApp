@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="Icons\bebetter.png" />
+    <None Remove="Icons\BizepsKabelzug.gif" />
+    <None Remove="Icons\BizepTraining.gif" />
     <None Remove="Icons\close.png" />
     <None Remove="Icons\fitness.png" />
     <None Remove="Icons\food.png" />
@@ -21,10 +23,17 @@
   <ItemGroup>
     <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-rc5.4" />
     <PackageReference Include="OpenAI" Version="2.1.0" />
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Icons\bebetter.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\BizepsKabelzug.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\BizepTraining.gif">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\close.png">

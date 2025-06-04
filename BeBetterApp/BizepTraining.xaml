@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="BeBetterApp.BizepTraining"
+             xmlns:wpfAnimatedGif="http://wpfanimatedgif.codeplex.com"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BeBetterApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" PanningMode="VerticalOnly">
+            <StackPanel Margin="20">
+
+                <TextBlock Text="Übung 1" FontSize="30" FontWeight="Bold" Foreground="white" HorizontalAlignment="Center"/>
+                <Image x:Name="GifImage1" Height="300" Width="auto" />
+
+                <TextBlock Text="Übung 2" FontSize="30" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+                <Image x:Name="GifImage2" Height="300" Width="auto" />
+
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -192,10 +192,6 @@
                 </Button>
 
 
-
-
-
-
             </Grid>
         </Border>
 
@@ -218,7 +214,9 @@
                     <ColumnDefinition Width="500"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- Weitere Inhalte hier -->
+                <ContentControl x:Name="RightContentArea"
+                        Grid.Row="0" Grid.Column="0"
+                        Margin="10" />
             </Grid>
         </Border>
     </Grid>

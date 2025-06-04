@@ -36,7 +36,7 @@ namespace BeBetterApp
 
         private void Button_Click_Bizep(object sender, RoutedEventArgs e)
         {
-
+            RightContentArea.Content = new BizepTraining();
         }
 
         private void Button_Click_Trizep(object sender, RoutedEventArgs e)
