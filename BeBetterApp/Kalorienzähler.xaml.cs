@@ -13,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using OpenAI.Chat;
+using System.IO;
 
 namespace BeBetterApp
 {
@@ -25,18 +27,47 @@ namespace BeBetterApp
 
         public Kalorienzähler()
         {
+
+
+
+
+            //using (StreamWriter sw = new StreamWriter(Kalorienspeicher.js))
+            {
+            //    sw.WriteLine(save); 
+
+            }
+
+
+            //string inhalt = File.ReadAllText(Speicherort);
+
+
             InitializeComponent();
 
             Series = new ISeries[]
             {
-                new ColumnSeries<double>
+                new LineSeries<double>
                 {
-                    Name = "Kalorien",
-                    Values = new double[] { 2200, 1800, 2100, 2300 }
+                    Values = new double[] {1000000, 4, 6, 3, 2, 6 }
                 }
             };
 
+
+
+
             DataContext = this;
+        }
+
+        private void Button_Tagadden_Click(object sender, RoutedEventArgs e)
+        {
+            Kaloriendazuzählen kaloriendazuzählen = new Kaloriendazuzählen();
+            kaloriendazuzählen.Show();
+
+
+        }
+
+        private void Button_zurück_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

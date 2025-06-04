@@ -23,16 +23,16 @@ namespace BeBetterApp
         public WindowEssensplanErstellung()
         {
             InitializeComponent();
-            if (File.Exists("Trainingsplan.js"))
+            if (File.Exists("Essensplan.json"))
             {
-                string jetzigerplan = File.ReadAllText("Trainingsplan.js");
+                string jetzigerplan = File.ReadAllText("Essensplan.json");
 
                 if (!string.IsNullOrWhiteSpace(jetzigerplan))
                 {
                     if (Ausgabe.Text == "" || Ausgabe.Text == null)
                     {
                         Ausgabe.Text = "Es wurde schon ein Plan für sie erstellt! Schauen sie unter 'Gespeichert' im Hauptmenü nach um " +
-    "Ihren Trainingsplan zu sehen.";
+    "Ihren Essensplan zu sehen.";
                     }
 
                 }
@@ -100,7 +100,7 @@ namespace BeBetterApp
             {
                 string aufforderung = $"Gib mir ein Essensplan wo ich {preferänz.Text} kann für eine woche. Ich bin {Gewicht.Text} schwer und {Größe.Text}cm groß. Gib nur den Plan nichts dazu schreiben oder so ** hinzufügen ein komplett normaler Text. Danke!";
 
-                kI.Ki(Ausgabe, aufforderung, "Trainingsplan.js");
+                kI.Ki(Ausgabe, aufforderung, "Essensplan.json");
             }
 
 

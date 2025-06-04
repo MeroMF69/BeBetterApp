@@ -25,9 +25,9 @@ namespace BeBetterApp
         {
 
             InitializeComponent();
-            if (File.Exists("Essensplan.js"))
+            if (File.Exists("Trainingsplan.json"))
             {
-                string jetzigerplan = File.ReadAllText("Essensplan.js");
+                string jetzigerplan = File.ReadAllText("Trainingsplan.json");
 
                 if (!string.IsNullOrWhiteSpace(jetzigerplan))
                 {
@@ -43,7 +43,7 @@ namespace BeBetterApp
             {
                 if (Ausgabe.Text == "" || Ausgabe.Text == null)
                 {
-                    Ausgabe.Text = ("Hier können Sie Ihr Essensplan erstellen! Füllen Sie Ihre Daten aus und los gehts!");
+                    Ausgabe.Text = ("Hier können Sie Ihr Trainingsplan erstellen! Füllen Sie Ihre Daten aus und los gehts!");
                 }
 
             }
@@ -100,13 +100,10 @@ namespace BeBetterApp
 
             if (erlaubniss1 == true && erlaubniss2 == true && erlaubniss3 == true)
             {
-                string aufforderung = $"Gib mir ein Essensplan wo ich {preferänz.Text} kann für eine woche. Ich bin {Gewicht.Text} schwer und {Größe.Text}cm groß. Gib nur den Plan nichts dazu schreiben oder so ** hinzufügen ein komplett normaler Text. Danke!";
+                string aufforderung = $"Gib mir ein Trainingsplan wo ich {preferänz.Text} kann für eine woche. Ich bin {Gewicht.Text} schwer und {Größe.Text}cm groß. Gib nur den Plan nichts dazu schreiben oder so ** hinzufügen ein komplett normaler Text. Danke!";
 
-                kI.Ki(Ausgabe, aufforderung, "Essensplan.js");
+                kI.Ki(Ausgabe, aufforderung, "Trainingsplann.json");
             }
-
-
-
         }
 
 
