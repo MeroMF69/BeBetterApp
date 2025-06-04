@@ -47,13 +47,12 @@
                 <Image Source="pack://application:,,,/Icons/HumanBody.png" Stretch="Uniform"/>
 
 
+                <!-- Bauchmuskel -->
                 <Button Width="100" Height="120" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,367,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click">
-
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
                                 <Rectangle Fill="Transparent"/>
-
                                 <TextBlock x:Name="HoverText" Text="Bauchmuskel" Foreground="White" Background="#AA000000" Padding="4" FontWeight="Bold" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                             <ControlTemplate.Triggers>
@@ -64,6 +63,139 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
+
+
+
+                <!-- Brustmuskel -->
+                <Button Width="100" Height="120" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,250,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Brust">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Rectangle Fill="Transparent"/>
+                                <TextBlock x:Name="HoverText" Text="Brustmuskel" Foreground="White" Background="#AA000000" Padding="4" FontWeight="Bold" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="HoverText" Property="Visibility" Value="Visible"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <!-- Bizep Links -->
+                <Button Width="100" Height="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="410,300,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Bizep">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Rectangle Fill="Transparent"/>
+                                <TextBlock x:Name="HoverText" Text="Bizep" Foreground="White" Background="#AA000000" Padding="4" FontWeight="Bold" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="HoverText" Property="Visibility" Value="Visible"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+                <!-- Bizep Rechts -->
+                <Button Width="100" Height="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,300,120,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Bizep">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Rectangle Fill="Transparent"/>
+                                <TextBlock x:Name="HoverText" Text="Bizep" Foreground="White" Background="#AA000000" Padding="4" FontWeight="Bold" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="HoverText" Property="Visibility" Value="Visible"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+                <!-- Trizep Links -->
+                <Button Width="100" Height="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="470,320,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Trizep">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Rectangle Fill="Transparent"/>
+                                <TextBlock x:Name="HoverText" Text="Trizep" Foreground="White" Background="#AA000000" Padding="4" FontWeight="Bold" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="HoverText" Property="Visibility" Value="Visible"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+
+                <!-- Trizep Rechts -->
+                <Button Width="100" Height="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,320,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Trizep">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Rectangle Fill="Transparent"/>
+                                <TextBlock x:Name="HoverText" Text="Trizep" Foreground="White" Background="#AA000000" Padding="4" FontWeight="Bold" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="HoverText" Property="Visibility" Value="Visible"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+                <!-- Schulter Links-->
+                <Button Width="110" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="430,200,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Schulter">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Rectangle Fill="Transparent"/>
+                                <TextBlock x:Name="HoverText" Text="Schulter" Foreground="White" Background="#AA000000" Padding="4" FontWeight="Bold" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="HoverText" Property="Visibility" Value="Visible"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+                <!-- Schulter Rechts-->
+                <Button Width="110" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,200,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Schulter">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Rectangle Fill="Transparent"/>
+                                <TextBlock x:Name="HoverText" Text="Schulter" Foreground="White" Background="#AA000000" Padding="4" FontWeight="Bold" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="HoverText" Property="Visibility" Value="Visible"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+
+
+
+
             </Grid>
         </Border>
 
