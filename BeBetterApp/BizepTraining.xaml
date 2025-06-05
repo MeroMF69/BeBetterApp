@@ -10,7 +10,7 @@
 
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top">
                 <!-- Übung 1 -->
-                <Border Background="#CC000000" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
                     <StackPanel>
                         <TextBlock Text="Übung 1" FontSize="28" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,10"/>
                         <Image x:Name="GifImage1" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center"/>
@@ -18,7 +18,7 @@
                 </Border>
 
                 <!-- Übung 2 -->
-                <Border Background="#CC000000" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
                     <StackPanel>
                         <TextBlock Text="Übung 2" FontSize="28" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,10"/>
                         <Image x:Name="GifImage2" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center"/>
