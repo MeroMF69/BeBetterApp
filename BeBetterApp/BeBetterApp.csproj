@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="GIFS\Bizep-Training\1.BarbellBicepCurl.gif" />
+    <None Remove="GIFS\Bizep-Training\2.HammerCurls.gif" />
+    <None Remove="GIFS\Bizep-Training\3.Preacher Curls.gif" />
+    <None Remove="GIFS\Bizep-Training\4.Chin-ups.gif" />
+    <None Remove="GIFS\Bizep-Training\5.Chin-ups.gif" />
+    <None Remove="GIFS\Bizep-Training\6.InclineDumbbellCurls.gif" />
+    <None Remove="GIFS\Bizep-Training\7.ZottmanCurls.gif" />
+    <None Remove="GIFS\Bizep-Training\8.Reverse Grip Barbell Curls.gif" />
+    <None Remove="GIFS\Bizep-Training\9.SpiderCurls.gif" />
+    <None Remove="GIFS\bizeps_1.gif" />
     <None Remove="Icons\bebetter.png" />
     <None Remove="Icons\BizepsKabelzug.gif" />
     <None Remove="Icons\BizepTraining.gif" />
@@ -27,13 +37,34 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="GIFS\Bizep-Training\1.BarbellBicepCurl.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Bizep-Training\2.HammerCurls.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Bizep-Training\3.Preacher Curls.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Bizep-Training\4.Chin-ups.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Bizep-Training\5.Chin-ups.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Bizep-Training\6.InclineDumbbellCurls.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Bizep-Training\7.ZottmanCurls.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Bizep-Training\8.Reverse Grip Barbell Curls.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Bizep-Training\9.SpiderCurls.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Icons\bebetter.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\BizepsKabelzug.gif">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\BizepTraining.gif">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\close.png">

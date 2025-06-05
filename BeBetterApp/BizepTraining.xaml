@@ -12,18 +12,77 @@
                 <!-- Übung 1 -->
                 <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
                     <StackPanel>
-                        <TextBlock Text="Übung 1" FontSize="28" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-                        <Image x:Name="GifImage1" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center"/>
+                        <TextBlock Text="1.Barbell Bicep Curl" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage1" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage1_MouseEnter" MouseLeave="GifImage1_MouseLeave"/>
                     </StackPanel>
                 </Border>
 
                 <!-- Übung 2 -->
                 <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
                     <StackPanel>
-                        <TextBlock Text="Übung 2" FontSize="28" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-                        <Image x:Name="GifImage2" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center"/>
+                        <TextBlock Text="2. Hammer Curls" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage2" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage2_MouseEnter" MouseLeave="GifImage2_MouseLeave"/>
                     </StackPanel>
                 </Border>
+
+                <!-- Übung 2 -->
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="3. Preacher Curls" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage3" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage3_MouseEnter" MouseLeave="GifImage3_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Übung 2 -->
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="4. Chin-ups" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage4" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage4_MouseEnter" MouseLeave="GifImage4_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Übung 2 -->
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="5. Cable Curls" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage5" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage5_MouseEnter" MouseLeave="GifImage5_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Übung 2 -->
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="6. Incline Dumbbell Curls" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage6" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage6_MouseEnter" MouseLeave="GifImage6_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Übung 2 -->
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="7. Zottman Curls" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage7" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage7_MouseEnter" MouseLeave="GifImage7_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Übung 2 -->
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="8. Reverse Grip Barbell Curls" FontSize="28" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage8" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage8_MouseEnter" MouseLeave="GifImage8_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Übung 2 -->
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="9. Spider Curls" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage9" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage9_MouseEnter" MouseLeave="GifImage9_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+
+
             </StackPanel>
         </ScrollViewer>
     </Grid>
