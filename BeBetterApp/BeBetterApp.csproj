@@ -19,6 +19,10 @@
     <None Remove="GIFS\Bizep-Training\8.Reverse Grip Barbell Curls.gif" />
     <None Remove="GIFS\Bizep-Training\9.SpiderCurls.gif" />
     <None Remove="GIFS\bizeps_1.gif" />
+    <None Remove="GIFS\Trizep-Training\1.overhead-tricep-extension.gif" />
+    <None Remove="GIFS\Trizep-Training\2.tricep-push-ups.gif" />
+    <None Remove="GIFS\Trizep-Training\3.tricep-rope-pulldown.gif" />
+    <None Remove="GIFS\Trizep-Training\4.V-bar Pushdown.gif" />
     <None Remove="Icons\bebetter.png" />
     <None Remove="Icons\BizepsKabelzug.gif" />
     <None Remove="Icons\BizepTraining.gif" />
@@ -62,6 +66,18 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="GIFS\Bizep-Training\9.SpiderCurls.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Trizep-Training\1.overhead-tricep-extension.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Trizep-Training\2.tricep-push-ups.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Trizep-Training\3.tricep-rope-pulldown.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Trizep-Training\4.V-bar Pushdown.gif">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\bebetter.png">

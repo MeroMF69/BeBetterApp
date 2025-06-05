@@ -41,7 +41,7 @@ namespace BeBetterApp
 
         private void Button_Click_Trizep(object sender, RoutedEventArgs e)
         {
-
+            RightContentArea.Content = new TrizepTraining();
         }
 
         private void Button_Click_Schulter(object sender, RoutedEventArgs e)

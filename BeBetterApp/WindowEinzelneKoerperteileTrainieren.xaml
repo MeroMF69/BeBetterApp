@@ -26,6 +26,7 @@
         <SolidColorBrush x:Key="color1" Color="#FFB3E5FC"/>
         <SolidColorBrush x:Key="color2" Color="#FFB2DFDB"/>
     </Window.Resources>
+    
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -190,6 +191,8 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
+
+                
 
 
             </Grid>

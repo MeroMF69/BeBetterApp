@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="BeBetterApp.TrizepTraining"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BeBetterApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="Transparent">
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" Padding="0" Margin="0">
+
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                <!-- Übung 1 -->
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="1  Overhead Tricep Extension" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage1" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage1_MouseEnter" MouseLeave="GifImage1_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="2. Tricep Push ups" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage2" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage2_MouseEnter" MouseLeave="GifImage2_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="3  Tricep Pulldown" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage3" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage3_MouseEnter" MouseLeave="GifImage3_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="4. V-bar Pushdown" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage4" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage4_MouseEnter" MouseLeave="GifImage4_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+
+
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
