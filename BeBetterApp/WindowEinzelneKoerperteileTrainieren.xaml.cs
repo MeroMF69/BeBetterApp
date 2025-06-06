@@ -24,10 +24,7 @@ namespace BeBetterApp
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        
 
         private void Button_Click_Brust(object sender, RoutedEventArgs e)
         {
@@ -47,6 +44,11 @@ namespace BeBetterApp
         private void Button_Click_Schulter(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void BauchMuskel_Click(object sender, RoutedEventArgs e)
+        {
+            RightContentArea.Content = new BauchmuskelTraining();
         }
     }
 }

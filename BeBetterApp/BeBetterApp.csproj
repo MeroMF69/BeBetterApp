@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="GIFS\BauchMuskel-Training\1.Crunches.gif" />
+    <None Remove="GIFS\BauchMuskel-Training\2.CrunchesArmegestreckt.gif" />
+    <None Remove="GIFS\BauchMuskel-Training\3.Situps.gif" />
+    <None Remove="GIFS\BauchMuskel-Training\4.SitupsmitKurzhantel.gif" />
+    <None Remove="GIFS\BauchMuskel-Training\5.CrunchesMaschine.gif" />
     <None Remove="GIFS\Bizep-Training\1.BarbellBicepCurl.gif" />
     <None Remove="GIFS\Bizep-Training\2.HammerCurls.gif" />
     <None Remove="GIFS\Bizep-Training\3.Preacher Curls.gif" />
@@ -41,6 +46,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="GIFS\BauchMuskel-Training\1.Crunches.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\BauchMuskel-Training\2.CrunchesArmegestreckt.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\BauchMuskel-Training\3.Situps.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\BauchMuskel-Training\4.SitupsmitKurzhantel.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\BauchMuskel-Training\5.CrunchesMaschine.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="GIFS\Bizep-Training\1.BarbellBicepCurl.gif">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
