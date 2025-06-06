@@ -21,7 +21,7 @@ namespace BeBetterApp
     /// </summary>
     public partial class BauchmuskelTraining : UserControl
     {
-        private readonly BitmapImage[] _gifs = new BitmapImage[4];
+        private readonly BitmapImage[] _gifs = new BitmapImage[5];
 
 
         public BauchmuskelTraining()
@@ -29,7 +29,7 @@ namespace BeBetterApp
 
             InitializeComponent();
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 string filename = GetFilename(i);
                 _gifs[i] = new BitmapImage(new Uri($"pack://application:,,,/BeBetterApp;component/GIFs/BauchMuskel-Training/{filename}"));
@@ -45,6 +45,9 @@ namespace BeBetterApp
             ImageBehavior.SetAutoStart(GifImage3, false);
 
             ImageBehavior.SetAnimatedSource(GifImage4, _gifs[3]);
+            ImageBehavior.SetAutoStart(GifImage4, false);
+
+            ImageBehavior.SetAnimatedSource(GifImage5, _gifs[4]);
             ImageBehavior.SetAutoStart(GifImage4, false);
         }
 
