@@ -1,0 +1,14 @@
+﻿<Window x:Class="BeBetterApp.CalendarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="Kalender" Height="600" Width="800" Background="#1B1446"
+        WindowStyle="None"
+        WindowState="Maximized">
+
+    <Grid>
+        <syncfusion:SfScheduler x:Name="scheduler" ViewType="Month" Background="#1B1446" Foreground="White" />
+
+    </Grid>
+
+</Window>

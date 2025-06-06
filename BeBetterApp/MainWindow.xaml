@@ -64,9 +64,7 @@
         </Style>
     </Window.Resources>
 
-    <Window.DataContext>
-        <viewModel:MainViewModel/>
-    </Window.DataContext>
+    
 
     <Border CornerRadius="10" BorderThickness="1">
         <Border.BorderBrush>
@@ -126,7 +124,7 @@
 
                         <!-- Organisation -->
                         <RadioButton Style="{StaticResource menuButton}"
-                                 Command="{Binding ShowOrganisationViewCommand}" Checked="RadioButton_Checked">
+                                 Command="{Binding ShowOrganisationViewCommand}" Checked="Button_Organisation">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="pack://application:,,,/Icons/organisation.png" Width="24" Height="24" Margin="5"/>
                                 <TextBlock Text="Organisation" Style="{StaticResource menuButtonText}"/>
@@ -173,7 +171,10 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="500"/>
                         </Grid.ColumnDefinitions>
-   
+
+                        <ListBox x:Name="todoList" DisplayMemberPath="Text" Grid.Row="1" Margin="5" Width="70" Height="50"/>
+
+
                     </Grid>
 
                 </Border>

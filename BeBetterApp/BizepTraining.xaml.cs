@@ -59,7 +59,7 @@ namespace BeBetterApp
                 1 => "HammerCurls.gif",
                 2 => "Preacher Curls.gif",
                 3 => "Chin-ups.gif",
-                4 => "Chin-ups.gif", // falls doppelt
+                4 => "Chin-ups.gif", 
                 5 => "InclineDumbbellCurls.gif",
                 6 => "ZottmanCurls.gif",
                 7 => "Reverse Grip Barbell Curls.gif",
