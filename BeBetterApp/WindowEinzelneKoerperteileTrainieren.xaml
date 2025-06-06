@@ -217,7 +217,9 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <ContentControl x:Name="RightContentArea" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Grid.Column="0" Margin="10" />
+                <ContentControl x:Name="RightContentArea" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Grid.Column="0" Margin="10">
+                    <TextBlock Text="Wählen Sie ein Körperteil zum Trainieren aus!" FontSize="28" Foreground="White" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </ContentControl>
             </Grid>
         </Border>
     </Grid>

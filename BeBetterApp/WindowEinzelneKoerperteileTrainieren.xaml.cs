@@ -22,6 +22,9 @@ namespace BeBetterApp
         public WindowEinzelneKoerperteileTrainieren()
         {
             InitializeComponent();
+
+
+          
         }
 
         
