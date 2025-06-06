@@ -172,7 +172,7 @@
                             <ColumnDefinition Width="500"/>
                         </Grid.ColumnDefinitions>
 
-                        <ListBox x:Name="todoList" DisplayMemberPath="Text" Grid.Row="1" Margin="5" Width="70" Height="50"/>
+                        
 
 
                     </Grid>

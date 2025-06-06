@@ -37,6 +37,13 @@
     <None Remove="Icons\HumanBody.png" />
     <None Remove="Icons\organisation.png" />
     <None Remove="Icons\save.png" />
+    <None Remove="license\license.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="license\license.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +51,7 @@
     <PackageReference Include="OpenAI" Version="2.1.0" />
     <PackageReference Include="Syncfusion.SfSchedule.WPF" Version="18.3.0.53" />
     <PackageReference Include="Syncfusion.SfScheduler.WPF" Version="29.2.9" />
+    <PackageReference Include="Syncfusion.SfSkinManager.WPF" Version="29.2.9" />
     <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
   </ItemGroup>
 

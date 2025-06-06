@@ -30,8 +30,7 @@ namespace BeBetterApp
             this.WindowStyle = WindowStyle.None;
             this.ResizeMode = ResizeMode.NoResize;
 
-            // Binde die ToDo-Liste an die Appointments-Collection
-            todoList.ItemsSource = Appointments;
+            
         }
 
         private void Button_Fitness(object sender, RoutedEventArgs e)
@@ -58,16 +57,11 @@ namespace BeBetterApp
 
         }
 
-        // Öffnet das Kalenderfenster und übergibt die gemeinsame Liste
-        private void OpenCalendar_Click(object sender, RoutedEventArgs e)
-        {
-            var calendarWindow = new CalendarWindow(Appointments);
-            calendarWindow.ShowDialog();
-        }
 
         private void Button_Organisation(object sender, RoutedEventArgs e)
         {
-            CalendarWindow calendarWindow = new CalendarWindow(Appointments);
+            var appointments = new ObservableCollection<AppointmentItem>();
+            var calendarWindow = new CalendarWindow(appointments);
             calendarWindow.Show();
         }
     }
