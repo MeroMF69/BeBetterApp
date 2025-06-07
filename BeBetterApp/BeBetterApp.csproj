@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="GIFS\Schulter-Trainieren\**" />
+    <EmbeddedResource Remove="GIFS\Schulter-Trainieren\**" />
+    <None Remove="GIFS\Schulter-Trainieren\**" />
+    <Page Remove="GIFS\Schulter-Trainieren\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="GIFS\BauchMuskel-Training\1.Crunches.gif" />
     <None Remove="GIFS\BauchMuskel-Training\2.CrunchesArmegestreckt.gif" />
     <None Remove="GIFS\BauchMuskel-Training\3.Situps.gif" />
@@ -24,12 +31,16 @@
     <None Remove="GIFS\Bizep-Training\8.Reverse Grip Barbell Curls.gif" />
     <None Remove="GIFS\Bizep-Training\9.SpiderCurls.gif" />
     <None Remove="GIFS\bizeps_1.gif" />
-    <None Remove="GIFS\Schulter-Trainieren\1.SeatedBent-OverLateralRaise.gif" />
     <None Remove="GIFS\BrustMuskel-Training\1.ChestPressMachine.gif" />
     <None Remove="GIFS\BrustMuskel-Training\2.DeclinePushUps.gif" />
     <None Remove="GIFS\BrustMuskel-Training\3.DumbbellBenchPress.gif" />
     <None Remove="GIFS\BrustMuskel-Training\4.CableBenchPress.gif" />
     <None Remove="GIFS\BrustMuskel-Training\5.ChestFlyMachine.gif" />
+    <None Remove="GIFS\SchulterMuskel-Trainieren\1.SeatedBent-OverLateralRaise.gif" />
+    <None Remove="GIFS\SchulterMuskel-Trainieren\2.BarbellRow.gif" />
+    <None Remove="GIFS\SchulterMuskel-Trainieren\3.One-ArmDumbbellFrontRaise.gif" />
+    <None Remove="GIFS\SchulterMuskel-Trainieren\4.DumbbellShoulderPress.gif" />
+    <None Remove="GIFS\SchulterMuskel-Trainieren\5.SeatedDumbbellShoulderPress.gif" />
     <None Remove="GIFS\Trizep-Training\1.overhead-tricep-extension.gif" />
     <None Remove="GIFS\Trizep-Training\2.tricep-push-ups.gif" />
     <None Remove="GIFS\Trizep-Training\3.tricep-rope-pulldown.gif" />
@@ -104,9 +115,6 @@
     <Resource Include="GIFS\Bizep-Training\9.SpiderCurls.gif">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="GIFS\Schulter-Trainieren\1.SeatedBent-OverLateralRaise.gif">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="GIFS\BrustMuskel-Training\1.ChestPressMachine.gif">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -120,6 +128,21 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="GIFS\BrustMuskel-Training\5.ChestFlyMachine.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\SchulterMuskel-Trainieren\1.SeatedBent-OverLateralRaise.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\SchulterMuskel-Trainieren\2.BarbellRow.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\SchulterMuskel-Trainieren\3.One-ArmDumbbellFrontRaise.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\SchulterMuskel-Trainieren\4.DumbbellShoulderPress.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\SchulterMuskel-Trainieren\5.SeatedDumbbellShoulderPress.gif">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="GIFS\Trizep-Training\1.overhead-tricep-extension.gif">
