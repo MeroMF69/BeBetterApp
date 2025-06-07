@@ -31,7 +31,7 @@ namespace BeBetterApp
 
         private void Button_Click_Brust(object sender, RoutedEventArgs e)
         {
-
+            RightContentArea.Content = new BrustTraining();
         }
 
         private void Button_Click_Bizep(object sender, RoutedEventArgs e)
