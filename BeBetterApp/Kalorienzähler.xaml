@@ -11,9 +11,11 @@
             <RowDefinition Height="20*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        
-        <lvc:CartesianChart Series="{Binding Series}" Grid.Row="0"/>
+
+
+        <lvc:CartesianChart Series="{Binding Series}">
+        </lvc:CartesianChart>
+
         <Button x:Name="Button_zurück" Content="zurück" HorizontalAlignment="Left" Grid.Row="1" Background="#FF1B1446" Click="Button_zurück_Click" ></Button>
         <Button x:Name="Button_Tagadden" Content="zurück" HorizontalAlignment="Right" Grid.Row="1" Background="#FF1B1446" Click="Button_Tagadden_Click" ></Button>
     </Grid>

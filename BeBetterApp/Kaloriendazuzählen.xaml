@@ -12,7 +12,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <TextBlock x:Name="textblock_kalorieeneingabe" Grid.Row="0" Height="50" Width="150"></TextBlock>
+            <TextBox x:Name="textblock_kalorieeneingabe" Grid.Row="0" Height="50" Width="150" ></TextBox>
             <Button x:Name="Button_eingegeben" Height="50" Width="150" Click="Button_eingegeben_Click"/>
         </StackPanel>
 

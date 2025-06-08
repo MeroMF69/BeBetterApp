@@ -28,28 +28,21 @@ namespace BeBetterApp
         public Kalorienzähler()
         {
 
-
-
-
-            //using (StreamWriter sw = new StreamWriter(Kalorienspeicher.js))
-            {
-            //    sw.WriteLine(save); 
-
-            }
-
-
-            //string inhalt = File.ReadAllText(Speicherort);
-
-
-            InitializeComponent();
+            Kaloriendazuzählen kdz = new Kaloriendazuzählen();
+            kdz.stats();
 
             Series = new ISeries[]
             {
-                new LineSeries<double>
-                {
-                    Values = new double[] {1000000, 4, 6, 3, 2, 6 }
-                }
+        new LineSeries<int>
+        {
+            Values = kdz.kalorientage
+        }
             };
+
+            
+
+            InitializeComponent();
+            DataContext = this;
 
 
 
@@ -60,14 +53,33 @@ namespace BeBetterApp
         private void Button_Tagadden_Click(object sender, RoutedEventArgs e)
         {
             Kaloriendazuzählen kaloriendazuzählen = new Kaloriendazuzählen();
-            kaloriendazuzählen.Show();
+            if (kaloriendazuzählen.ShowDialog() == true)
+            {
 
-
+                UpdateChart();
+            }
         }
 
         private void Button_zurück_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        public void UpdateChart()
+        {
+            Kaloriendazuzählen kdz = new Kaloriendazuzählen();
+            kdz.stats();
+
+            Series = new ISeries[]
+            {
+            new LineSeries<int>
+            {
+            Values = kdz.kalorientage
+            }
+            };
+
+            DataContext = null; 
+            DataContext = this;
         }
     }
 }
