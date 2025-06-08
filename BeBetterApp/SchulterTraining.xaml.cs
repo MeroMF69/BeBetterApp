@@ -1,28 +1,40 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 using WpfAnimatedGif;
 
 namespace BeBetterApp
 {
-    public partial class BizepTraining : UserControl
+    /// <summary>
+    /// Interaction logic for SchulterTraining.xaml
+    /// </summary>
+    public partial class SchulterTraining : UserControl
     {
+
         private BitmapImage[] _gifs = new BitmapImage[9];
 
-        public BizepTraining()
+        public SchulterTraining()
         {
             InitializeComponent();
 
-            // GIFs laden
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 5; i++)
             {
-                string filename = $"{i + 1}.{GetFilename(i)}";
-                _gifs[i] = new BitmapImage(new Uri($"pack://application:,,,/BeBetterApp;component/GIFs/Bizep-Training/{filename}"));
+                string filename = GetFilename(i);
+                _gifs[i] = new BitmapImage(new Uri($"pack://application:,,,/BeBetterApp;component/GIFs/SchulterMuskel-Trainieren/{filename}"));
+
             }
 
-            // GIFs in Images einfügen und pausieren
             ImageBehavior.SetAnimatedSource(GifImage1, _gifs[0]);
             ImageBehavior.SetAutoStart(GifImage1, false);
 
@@ -37,33 +49,17 @@ namespace BeBetterApp
 
             ImageBehavior.SetAnimatedSource(GifImage5, _gifs[4]);
             ImageBehavior.SetAutoStart(GifImage5, false);
-
-            ImageBehavior.SetAnimatedSource(GifImage6, _gifs[5]);
-            ImageBehavior.SetAutoStart(GifImage6, false);
-
-            ImageBehavior.SetAnimatedSource(GifImage7, _gifs[6]);
-            ImageBehavior.SetAutoStart(GifImage7, false);
-
-            ImageBehavior.SetAnimatedSource(GifImage8, _gifs[7]);
-            ImageBehavior.SetAutoStart(GifImage8, false);
-
-            ImageBehavior.SetAnimatedSource(GifImage9, _gifs[8]);
-            ImageBehavior.SetAutoStart(GifImage9, false);
         }
 
         private string GetFilename(int index)
         {
             return index switch
             {
-                0 => "BarbellBicepCurl.gif",
-                1 => "HammerCurls.gif",
-                2 => "Preacher Curls.gif",
-                3 => "Chin-ups.gif",
-                4 => "Chin-ups.gif", 
-                5 => "InclineDumbbellCurls.gif",
-                6 => "ZottmanCurls.gif",
-                7 => "Reverse Grip Barbell Curls.gif",
-                8 => "SpiderCurls.gif",
+                0 => "1.SeatedBent-OverLateralRaise.gif",
+                1 => "2.BarbellRow.gif",
+                2 => "3.One-ArmDumbbellFrontRaise.gif",
+                3 => "4.DumbbellShoulderPress.gif",
+                4 => "5.SeatedDumbbellShoulderPress.gif",
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
@@ -82,17 +78,6 @@ namespace BeBetterApp
 
         private void GifImage5_MouseEnter(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage5)?.Play();
         private void GifImage5_MouseLeave(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage5)?.Pause();
-
-        private void GifImage6_MouseEnter(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage6)?.Play();
-        private void GifImage6_MouseLeave(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage6)?.Pause();
-
-        private void GifImage7_MouseEnter(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage7)?.Play();
-        private void GifImage7_MouseLeave(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage7)?.Pause();
-
-        private void GifImage8_MouseEnter(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage8)?.Play();
-        private void GifImage8_MouseLeave(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage8)?.Pause();
-
-        private void GifImage9_MouseEnter(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage9)?.Play();
-        private void GifImage9_MouseLeave(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage9)?.Pause();
     }
+    
 }

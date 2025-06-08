@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace BeBetterApp
 {
@@ -16,6 +17,10 @@ namespace BeBetterApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Liste für Termine, automatisch UI-aktualisiert
+        public ObservableCollection<AppointmentItem> Appointments { get; } = new();
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -25,9 +30,8 @@ namespace BeBetterApp
             this.WindowStyle = WindowStyle.None;
             this.ResizeMode = ResizeMode.NoResize;
 
+            
         }
-
-     
 
         private void Button_Fitness(object sender, RoutedEventArgs e)
         {
@@ -41,24 +45,24 @@ namespace BeBetterApp
             ernaerungselect.Show();
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+ 
 
         private void Button_Quit(object sender, RoutedEventArgs e)
         {
-            this.Close();   
+            this.Close();
         }
 
         private void Button_Saved(object sender, RoutedEventArgs e)
         {
 
+        }
+
+
+        private void Button_Organisation(object sender, RoutedEventArgs e)
+        {
+            var appointments = new ObservableCollection<AppointmentItem>();
+            var calendarWindow = new CalendarWindow(appointments);
+            calendarWindow.Show();
         }
     }
 }

@@ -31,7 +31,7 @@ namespace BeBetterApp
 
         private void Button_Click_Brust(object sender, RoutedEventArgs e)
         {
-
+            RightContentArea.Content = new BrustTraining();
         }
 
         private void Button_Click_Bizep(object sender, RoutedEventArgs e)
@@ -46,7 +46,7 @@ namespace BeBetterApp
 
         private void Button_Click_Schulter(object sender, RoutedEventArgs e)
         {
-
+            RightContentArea.Content = new SchulterTraining();
         }
 
         private void BauchMuskel_Click(object sender, RoutedEventArgs e)
