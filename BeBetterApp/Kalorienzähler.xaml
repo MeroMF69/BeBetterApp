@@ -13,8 +13,10 @@
         </Grid.RowDefinitions>
 
 
-        <lvc:CartesianChart Series="{Binding Series}">
-        </lvc:CartesianChart>
+        <lvc:CartesianChart Series="{Binding Series}"
+                    XAxes="{Binding XAxes}"
+                    YAxes="{Binding YAxes}" />
+
 
         <Button x:Name="Button_zurück" Content="zurück" HorizontalAlignment="Left" Grid.Row="1" Background="#FF1B1446" Click="Button_zurück_Click" ></Button>
         <Button x:Name="Button_Tagadden" Content="zurück" HorizontalAlignment="Right" Grid.Row="1" Background="#FF1B1446" Click="Button_Tagadden_Click" ></Button>

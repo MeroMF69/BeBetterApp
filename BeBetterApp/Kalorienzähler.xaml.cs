@@ -15,6 +15,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using OpenAI.Chat;
 using System.IO;
+using LiveChartsCore.SkiaSharpView.Painting;
+using SkiaSharp;
+
 
 namespace BeBetterApp
 {
@@ -25,28 +28,41 @@ namespace BeBetterApp
     {
         public ISeries[] Series { get; set; }
 
+        public Axis[] XAxes { get; set; }
+        public Axis[] YAxes { get; set; }
+
         public Kalorienzähler()
         {
-
             Kaloriendazuzählen kdz = new Kaloriendazuzählen();
             kdz.stats();
 
             Series = new ISeries[]
             {
-        new LineSeries<int>
-        {
-            Values = kdz.kalorientage
-        }
+                new LineSeries<int>
+                {
+                    Values = kdz.kalorientage
+                }
+            };
+            YAxes = new Axis[]
+            {
+                new Axis
+                {
+                    MinLimit = 0, // Damit werden keine negativen Werte angezeigt
+                    
+                }
             };
 
-            
+
+            XAxes = new Axis[]
+            {
+                new Axis
+                {
+                    Labels = new[] { "Vor 6 Tagen", "Vor 5 Tgaen", "Vor 4 Tagen", "Vor 3 Tagen", "Vor 2 Tagen", "Gestern", "Heute" },
+                    
+                }
+            };
 
             InitializeComponent();
-            DataContext = this;
-
-
-
-
             DataContext = this;
         }
 

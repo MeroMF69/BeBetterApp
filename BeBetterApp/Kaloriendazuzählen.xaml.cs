@@ -76,17 +76,34 @@ namespace BeBetterApp
                     }
                     else
                     {
-                        kalorientage[0] = kl.Tag6;
-                        kalorientage[1] = kl.Tag5;
-                        kalorientage[2] = kl.Tag4;
-                        kalorientage[3] = kl.Tag3;
-                        kalorientage[4] = kl.Tag2;
-                        kalorientage[5] = kl.Tag1;
-                        kalorientage[6] = 0;
+                    int differenz = heute.DayNumber - kl.Tag.DayNumber;
+
+                    differenz++;
+
+                    int[] altekalorien = new int[7];
+
+                    altekalorien[0] = kl.Tag1;
+                    altekalorien[1] = kl.Tag2;
+                    altekalorien[2] = kl.Tag3;
+                    altekalorien[3] = kl.Tag4;
+                    altekalorien[4] = kl.Tag5;
+                    altekalorien[5] = kl.Tag6;
+                    altekalorien[6] = kl.Tag7;
+
+                    for (int i = 0; i < 6; i++)
+                    {
+                        if (differenz >6)
+                        {
+                            break;
+                        }
+                        kalorientage[7-differenz] = altekalorien[i];
+                        differenz++;
+                    }
+
 
                         using (StreamWriter sw = new StreamWriter("Kalorienspeicher.json"))
                         {
-                            sw.WriteLine($"{kl.Tag6}#{kl.Tag5}#{kl.Tag4}#{kl.Tag3}#{kl.Tag2}#{kl.Tag1}#0#{heute}");
+                        sw.WriteLine($"{kalorientage[0]}#{kalorientage[1]}#{kalorientage[2]}#{kalorientage[3]}#{kalorientage[4]}#{kalorientage[5]}#{kalorientage[6]}#{heute}");
 
                         }
                     }
