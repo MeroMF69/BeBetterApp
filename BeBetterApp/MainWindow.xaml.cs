@@ -26,9 +26,8 @@ namespace BeBetterApp
             InitializeComponent();
             
 
-            // Kalenderfenster öffnen
-            CalendarWindow kalender = new CalendarWindow();
-            kalender.Show();
+
+
 
             // Volbildschirm 
             this.WindowState = WindowState.Maximized;
