@@ -1,55 +1,29 @@
-﻿using Syncfusion.UI.Xaml.Schedule;
-using System.Collections.ObjectModel;
+﻿using System;
 using System.Windows;
-
-using ScheduleNamespace = Syncfusion.UI.Xaml.Schedule;
+using Syncfusion.UI.Xaml.Scheduler;
 
 namespace BeBetterApp
 {
     public partial class CalendarWindow : Window
     {
-        private ObservableCollection<AppointmentItem> sharedAppointments;
-
-        public CalendarWindow(ObservableCollection<AppointmentItem> appointments)
+        public CalendarWindow()
         {
             InitializeComponent();
-            sharedAppointments = appointments;
 
-            LoadAppointmentsFromList();
-        }
+            // Globale Termine anzeigen
+            scheduler.ItemsSource = GlobalSchedule.SharedSchedule.Termine;
 
-        private void LoadAppointmentsFromList()
-        {
-            var appointments = new ScheduleNamespace.ScheduleAppointmentCollection();
-
-            foreach (var appt in sharedAppointments)
+            // Beispiel-Termin hinzufügen (Erinnerung)
+            var erinnerung = new ScheduleAppointment
             {
-                appointments.Add(new ScheduleNamespace.ScheduleAppointment()
-                {
-                    StartTime = appt.Date,
-                    EndTime = appt.Date.AddHours(1),
-                    Subject = appt.Text
-                });
-            }
+                Subject = "Erinnerung: Trinken nicht vergessen!",
+                StartTime = DateTime.Now,
+                EndTime = DateTime.Now.AddMinutes(30),
+                Location = "Küche",
+                AppointmentBackground = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.DarkOrange)
+            };
 
-            scheduler.ItemsSource = appointments; // ItemsSource statt ScheduleAppointments
-        }
-
-        public void SyncAppointmentsToMainList()
-        {
-            sharedAppointments.Clear();
-
-            if (scheduler.ItemsSource is ScheduleNamespace.ScheduleAppointmentCollection appointmentCollection)
-            {
-                foreach (var appointment in appointmentCollection)
-                {
-                    sharedAppointments.Add(new AppointmentItem
-                    {
-                        Date = appointment.StartTime,
-                        Text = appointment.Subject ?? "(Keine Beschreibung)"
-                    });
-                }
-            }
+            GlobalSchedule.SharedSchedule.AddTermin(erinnerung);
         }
     }
 }

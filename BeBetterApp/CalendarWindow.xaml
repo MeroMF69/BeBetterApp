@@ -13,11 +13,7 @@
     <!-- dunkler Hintergrund -->
 
     <Grid Margin="20">
-        <syncfusion:SfScheduler x:Name="scheduler"
-                                ViewType="Week"
-                                FontSize="14"
-                                Background="#1B1B2F"
-                                Foreground="White" />
+        <syncfusion:SfScheduler x:Name="scheduler" ViewType="Week" FontSize="14" Background="#1B1B2F" Foreground="White" />
     </Grid>
 </Window>
 

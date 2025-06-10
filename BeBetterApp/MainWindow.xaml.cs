@@ -18,19 +18,23 @@ namespace BeBetterApp
     public partial class MainWindow : Window
     {
         // Liste für Termine, automatisch UI-aktualisiert
-        
 
+        
 
         public MainWindow()
         {
             InitializeComponent();
+            
+
+            // Kalenderfenster öffnen
+            CalendarWindow kalender = new CalendarWindow();
+            kalender.Show();
 
             // Volbildschirm 
             this.WindowState = WindowState.Maximized;
             this.WindowStyle = WindowStyle.None;
             this.ResizeMode = ResizeMode.NoResize;
 
-            
         }
 
         private void Button_Fitness(object sender, RoutedEventArgs e)
@@ -61,9 +65,10 @@ namespace BeBetterApp
 
         private void Button_Organisation(object sender, RoutedEventArgs e)
         {
-            var appointments = new ObservableCollection<AppointmentItem>();
-            var calendarWindow = new CalendarWindow(appointments);
-            calendarWindow.Show();
+            Schedule manager = new Schedule();
+            CalendarWindow kalender = new CalendarWindow();
+            kalender.Show();
+
         }
     }
 }
