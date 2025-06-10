@@ -20,8 +20,6 @@ namespace BeBetterApp
             this.Close();
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-
-
         }
 
         private void Button_Koerperteile(object sender, RoutedEventArgs e)

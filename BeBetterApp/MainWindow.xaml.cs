@@ -18,7 +18,7 @@ namespace BeBetterApp
     public partial class MainWindow : Window
     {
         // Liste für Termine, automatisch UI-aktualisiert
-        public ObservableCollection<AppointmentItem> Appointments { get; } = new();
+        
 
 
         public MainWindow()
@@ -35,6 +35,7 @@ namespace BeBetterApp
 
         private void Button_Fitness(object sender, RoutedEventArgs e)
         {
+            
             WindowSelect window = new WindowSelect();
             window.Show();
         }

@@ -53,5 +53,12 @@ namespace BeBetterApp
         {
             RightContentArea.Content = new BauchmuskelTraining();
         }
+
+        private void Button_zuruck(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            WindowSelect windowSelect = new WindowSelect();
+            windowSelect.Show();
+        }
     }
 }
