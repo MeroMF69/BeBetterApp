@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace BeBetterApp
 {
-    public class AppointmentItem
+    internal class AppointmentItem
     {
-        public DateTime Date { get; set; }    
-        public string Text { get; set; }
     }
 }
