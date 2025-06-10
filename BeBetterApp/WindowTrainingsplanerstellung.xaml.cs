@@ -102,7 +102,7 @@ namespace BeBetterApp
             {
                 string aufforderung = $"Gib mir ein Trainingsplan wo ich {preferänz.Text} kann für eine woche. Ich bin {Gewicht.Text} schwer und {Größe.Text}cm groß. Gib nur den Plan nichts dazu schreiben oder so ** hinzufügen ein komplett normaler Text. Danke!";
 
-                kI.Ki(Ausgabe, aufforderung, "Trainingsplann.json");
+                kI.Ki(Ausgabe, aufforderung, "Trainingsplan.json");
             }
         }
 
