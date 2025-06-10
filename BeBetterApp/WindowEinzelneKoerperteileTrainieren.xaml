@@ -25,7 +25,40 @@
         <SolidColorBrush x:Key="titleColor2" Color="White"/>
         <SolidColorBrush x:Key="color1" Color="#FFB3E5FC"/>
         <SolidColorBrush x:Key="color2" Color="#FFB2DFDB"/>
+
+        <!-- Style wie menuButton aus MainWindow -->
+        <Style x:Key="roundMenuButton" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        CornerRadius="20"
+                        Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#33FFFFFF"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#22FFFFFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Margin" Value="15"/>
+        </Style>
     </Window.Resources>
+    
+    
 
 
     <Grid>
@@ -42,10 +75,12 @@
                     <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-
             <Grid>
 
                 <Image Source="pack://application:,,,/Icons/HumanBody.png" Stretch="Uniform"/>
+                <Button Grid.Row="1" Content="Zurück" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Width="200" Height="60" FontSize="20" Click="Button_zuruck" Style="{StaticResource roundMenuButton}"/>
+
+
 
 
                 <!-- Bauchmuskel -->
@@ -83,6 +118,8 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
+                
+                
 
                 <!-- Bizep Links -->
                 <Button Width="100" Height="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="410,300,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Bizep">
