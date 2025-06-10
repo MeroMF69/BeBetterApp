@@ -26,9 +26,6 @@ namespace BeBetterApp
             InitializeComponent();
             
 
-
-
-
             // Volbildschirm 
             this.WindowState = WindowState.Maximized;
             this.WindowStyle = WindowStyle.None;
