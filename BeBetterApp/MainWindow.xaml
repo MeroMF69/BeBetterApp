@@ -189,6 +189,11 @@
                             <Button Height="auto" Width="50" Margin="0,30,0,30" Content="✓" FontSize="20" />
 
                         </StackPanel>
+
+                        <Grid Grid.Column="1" Grid.Row="2">
+                            <local:TerminListe Grid.Row="0" Grid.Column="0" Margin="20"/>
+                        </Grid>
+
                         
 
 
