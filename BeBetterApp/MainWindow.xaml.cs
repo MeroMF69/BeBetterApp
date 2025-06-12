@@ -27,7 +27,8 @@ namespace BeBetterApp
     {
         // Liste für Termine, automatisch UI-aktualisiert
 
-        DateOnly heute = DateOnly.FromDateTime(DateTime.Now);
+
+        DateOnly heute = DateOnly.FromDateTime(DateTime.Now); 
         int streak = 0;
         int punkte = 0;
         DateOnly Tag = DateOnly.FromDateTime(DateTime.Now);
@@ -196,12 +197,12 @@ namespace BeBetterApp
             }
         }
 
-        string speicherPfad = "termine.json";
+        string speicherPfad = "termine.json"; // Pfad indem meine Termine gespeichert werden 
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            GlobalSchedule.SharedSchedule.LoadFromFile(speicherPfad);
-            terminListeControl.Aktualisieren();
+            GlobalSchedule.SharedSchedule.LoadFromFile(speicherPfad); // Lädt alle Termine aus der Datei und speichert sie in der globalen Terminliste 
+            terminListeControl.Aktualisieren(); // Aktulisiert Anzeige in der TErminliste im FEnster 
 
         }
 
