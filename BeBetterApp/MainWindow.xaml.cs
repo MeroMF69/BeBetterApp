@@ -9,6 +9,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using System;
+using System.IO;
+
+
+
+
+
 
 namespace BeBetterApp
 {
@@ -26,7 +33,7 @@ namespace BeBetterApp
             InitializeComponent();
             
 
-            // Volbildschirm 
+            
             this.WindowState = WindowState.Maximized;
             this.WindowStyle = WindowStyle.None;
             this.ResizeMode = ResizeMode.NoResize;
@@ -62,10 +69,33 @@ namespace BeBetterApp
 
         private void Button_Organisation(object sender, RoutedEventArgs e)
         {
-            Schedule manager = new Schedule();
+            // Kalender öffnen
             CalendarWindow kalender = new CalendarWindow();
-            kalender.Show();
+            kalender.ShowDialog();
+
+            // Terminliste aktualisieren
+            terminListeControl.Aktualisieren();
+
+            // RadioButton ent-checken, damit erneuter Klick möglich ist
+            if (sender is RadioButton rb)
+            {
+                rb.IsChecked = false;
+            }
+        }
+
+        string speicherPfad = "termine.json";
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            GlobalSchedule.SharedSchedule.LoadFromFile(speicherPfad);
+            terminListeControl.Aktualisieren();
 
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            GlobalSchedule.SharedSchedule.SaveToFile(speicherPfad);
+        }
+
     }
 }
