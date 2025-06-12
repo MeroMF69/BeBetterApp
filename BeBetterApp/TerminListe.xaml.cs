@@ -1,30 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Collections.Generic;
+using Syncfusion.UI.Xaml.Scheduler;
 
 namespace BeBetterApp
 {
-    /// <summary>
-    /// Interaction logic for TerminListe.xaml
-    /// </summary>
     public partial class TerminListe : UserControl
     {
         public TerminListe()
         {
             InitializeComponent();
-            // Verbindung zur globalen Terminliste
             TerminListControl.ItemsSource = GlobalSchedule.SharedSchedule.Termine;
+            
+        }
+
+        private void LadeNächstenTermin()
+        {
+            var nächster = GlobalSchedule.SharedSchedule.Termine
+                .Where(t => t.StartTime > DateTime.Now)
+                .OrderBy(t => t.StartTime)
+                .FirstOrDefault(); // nur der früheste zukünftige Termin
+
+            if (nächster != null)
+            {
+                TerminListControl.ItemsSource = new List<ScheduleAppointment> { nächster };
+            }
+            else
+            {
+                // Option: leere Liste oder Hinweis anzeigen
+                TerminListControl.ItemsSource = null;
+            }
+        }
+
+        // Falls du später manuell aktualisieren willst
+        public void Aktualisieren()
+        {
+            LadeNächstenTermin();
         }
     }
 }

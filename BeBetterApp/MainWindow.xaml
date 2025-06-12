@@ -11,7 +11,8 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
-        WindowState="Maximized" >
+        WindowState="Maximized"
+        Loaded="Window_Loaded" Closed="Window_Closed">
 
     <Window.Resources>
         <!-- Farben -->
@@ -166,7 +167,7 @@
                         <Grid.RowDefinitions >
                             <RowDefinition Height="100"/>
                             <RowDefinition Height="100"/>
-                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="auto"/>
                             <RowDefinition Height="100"/>
 
 
@@ -191,7 +192,7 @@
                         </StackPanel>
 
                         <Grid Grid.Column="1" Grid.Row="2">
-                            <local:TerminListe Grid.Row="0" Grid.Column="0" Margin="20"/>
+                            <local:TerminListe x:Name="terminListeControl"/>
                         </Grid>
 
                         

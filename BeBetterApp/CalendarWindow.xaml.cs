@@ -24,6 +24,14 @@ namespace BeBetterApp
             };
 
             GlobalSchedule.SharedSchedule.AddTermin(erinnerung);
+            GlobalSchedule.SharedSchedule.SaveToFile("termine.json");
+
+        }
+
+        private void Button_Zurueck_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            
         }
     }
 }
