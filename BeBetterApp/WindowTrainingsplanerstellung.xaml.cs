@@ -40,7 +40,7 @@ namespace BeBetterApp
                     if (Ausgabe.Text == "" || Ausgabe.Text == null)
                     {
                         Ausgabe.Text = "Es wurde schon ein Plan für sie erstellt! Schauen sie unter 'Gespeichert' im Hauptmenü nach um " +
-    "Ihren Trainingsplan zu sehen.";
+    "Ihren Trainingsplan zu sehen."; 
                     }
 
                 }
@@ -111,6 +111,8 @@ namespace BeBetterApp
         private void Button_zuruck(object sender, RoutedEventArgs e)
         {
             this.Close();
+            WindowSelect windowSelect = new WindowSelect();
+            windowSelect.Show();
         }
     }
 }

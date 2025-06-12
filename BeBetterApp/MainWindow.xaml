@@ -184,9 +184,9 @@
                        
                         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
                             <Border Width="auto" Height="auto" Background="	#FF00FF" CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Margin="30,30,10,30">
-                                <TextBlock x:Name="Textblock_challange" Text="Mach 10 Pushups" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="White" />
+                                <TextBlock x:Name="Textblock_challange" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="White" />
                             </Border>
-                            <Button Height="auto" Width="50" Margin="0,30,0,30" Content="✓" FontSize="20" />
+                            <Button Height="auto" Width="50" Margin="0,30,0,30" Content="✓" FontSize="20" Click="Button_Click" />
 
                         </StackPanel>
 
