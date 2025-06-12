@@ -12,26 +12,11 @@ namespace BeBetterApp
 
             // Globale Termine anzeigen
             scheduler.ItemsSource = GlobalSchedule.SharedSchedule.Termine;
-
-            // Beispiel-Termin hinzufügen (Erinnerung)
-            var erinnerung = new ScheduleAppointment
-            {
-                Subject = "Erinnerung: Trinken nicht vergessen!",
-                StartTime = DateTime.Now,
-                EndTime = DateTime.Now.AddMinutes(30),
-                Location = "Küche",
-                AppointmentBackground = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.DarkOrange)
-            };
-
-            GlobalSchedule.SharedSchedule.AddTermin(erinnerung);
-            GlobalSchedule.SharedSchedule.SaveToFile("termine.json");
-
         }
 
         private void Button_Zurueck_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            
         }
     }
 }
