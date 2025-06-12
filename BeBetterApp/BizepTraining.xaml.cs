@@ -15,7 +15,7 @@ namespace BeBetterApp
         {
             InitializeComponent();
 
-            // GIFs laden
+            // GIF laden
             for (int i = 0; i < 9; i++)
             {
                 string filename = $"{i + 1}.{GetFilename(i)}";
