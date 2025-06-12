@@ -79,8 +79,8 @@ namespace BeBetterApp
         private void Button_zurück_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            WindowSelect windowSelect = new WindowSelect();
-            windowSelect.Show();
+            Ernaerungselect ernaerungselect = new Ernaerungselect();
+            ernaerungselect.Show();
         }
 
         public void UpdateChart()
