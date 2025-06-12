@@ -114,6 +114,13 @@ namespace BeBetterApp
         {
             Gewicht.Text = string.Empty;
         }
+
+        private void Button_zuruck(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Ernaerungselect ernaerungselect = new Ernaerungselect();
+            ernaerungselect.Show();
+        }
     }
    }
 
