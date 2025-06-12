@@ -25,8 +25,14 @@ namespace BeBetterApp
         {
 
             InitializeComponent();
+
+             
+
+
+
             if (File.Exists("Trainingsplan.json"))
             {
+                
                 string jetzigerplan = File.ReadAllText("Trainingsplan.json");
 
                 if (!string.IsNullOrWhiteSpace(jetzigerplan))
@@ -48,10 +54,6 @@ namespace BeBetterApp
 
             }
 
-            if(Gewicht.Text == "")
-            {
-                Gewicht.Text = "Gewicht";
-            }
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -109,10 +111,8 @@ namespace BeBetterApp
 
 
 
-        private void Gewicht_GotFocus(object sender, RoutedEventArgs e)
-        {
-            Gewicht.Text = string.Empty;
-        }
+
+        
 
     }
 }

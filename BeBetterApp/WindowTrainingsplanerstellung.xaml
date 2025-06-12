@@ -9,25 +9,82 @@
         WindowStyle="none"
         WindowState="Maximized">
     <Grid>
+
         
+
         <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="10*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Gewicht:" Height="30" Width="80" Foreground="White" Margin="5" FontSize="15"></Label>
-            <TextBox x:Name="Gewicht" Height="50" Width="150" Grid.Row="0" Text="Gewicht" FontSize="31" Background="#FF1B1446" Foreground="White" GotFocus="Gewicht_GotFocus" Margin="5" />
-            <Label Content="Größe:" Height="30" Width="60" Foreground="White" Margin="5" FontSize="15" ></Label>
-            <TextBox x:Name="Größe" Height="50" Width="150" Grid.Row="0" Background="#FF1B1446" Foreground="White" Margin="5"  />
-            <ComboBox x:Name="preferänz" Height="50" Width="150" Grid.Row="0" Background="#FF1B1446" Foreground="White" Margin="5">
-                <ComboBoxItem Content="abnehmen"></ComboBoxItem>
-                <ComboBoxItem Content="muskelaufbau"></ComboBoxItem>
-            </ComboBox>
-            <Button Margin="5" Content="Erstellen" HorizontalAlignment="Left" Grid.Row="0"  Height="50" Width="150" Click="Button_Click" Background="#FF1B1446" Foreground="White"/>
-        </StackPanel>
-        
-        <TextBox x:Name="Ausgabe" HorizontalAlignment="Center" Grid.Row="1"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="660" Height="288" Background="#FF1B1446" Foreground="White"  />
+        <Rectangle Fill="#FF1F1A4E" Grid.Row="0" Width="auto" Height="auto"/>
 
+        <Grid Grid.Row="1" Margin="5" Background="#FF1B1446">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0"  Content="Gewicht(kg):" HorizontalAlignment="Right" Height="50" Width="auto" Foreground="White"  FontSize="30"></Label>
+            <Border Width="150" Height="50" Background="LightSlateGray" CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Column="1" >
+                <TextBox Background="LightSlateGray"  x:Name="Gewicht" Height="50" Width="150"  HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" />
+            </Border>
+            <Label Grid.Column="2" Content="Größe(cm):" Height="50" Width="auto" Foreground="White"  FontSize="30" HorizontalAlignment="Right"></Label>
+            <Border Width="150" Height="50" Background="LightSlateGray" CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Column="3" >
+                <TextBox Background="LightSlateGray" x:Name="Größe" Height="50" Width="150"  HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" />
+            </Border>
+            <ComboBox
+    Grid.Column="4"
+    Grid.Row="0"
+    x:Name="preferänz"
+    Width="150"
+    Height="50"
+                Margin="5"
+    Background="LightSlateGray"
+    Foreground="White">
+
+                <ComboBoxItem Content="abnehmen" />
+                <ComboBoxItem Content="muskelaufbau" />
+
+            </ComboBox>
+            <Button Grid.Column="5" Margin="5" Content="Erstellen" HorizontalAlignment="Left" Grid.Row="0"  Height="50" Width="150" Click="Button_Click" Background="#FF1B1446" Foreground="White" FontSize="30"/>
+            
+
+        </Grid>
+
+
+        <Grid Grid.Row="2" Margin="0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Grid.Row="0" Fill="#FF1F1A4E"/>
+
+            <TextBox Grid.Row="1"
+           x:Name="Ausgabe"
+           AcceptsReturn="True"
+           TextWrapping="Wrap"
+           Background="#FF1B1446"
+           Foreground="White"
+           FontSize="30"
+                     Margin="60,0,60,0"
+                     HorizontalAlignment="Left"
+           BorderThickness="0"
+           Padding="5"/>
+
+            <Rectangle Grid.Row="2" Fill="#FF1F1A4E"/>
+        </Grid>
+
+
+
+        <Label x:Name="Titel" Content="TrainingsPlan erstellen" FontSize="50" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"  FontWeight="Bold"/>
     </Grid>
 </Window>
