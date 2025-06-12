@@ -38,6 +38,7 @@ namespace BeBetterApp
             
             WindowSelect window = new WindowSelect();
             window.Show();
+            
         }
 
         private void Button_Ernaehrung(object sender, RoutedEventArgs e)
@@ -50,7 +51,7 @@ namespace BeBetterApp
 
         private void Button_Quit(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown(); // ALLE Fenster schließen sich!!!!!
         }
 
         private void Button_Saved(object sender, RoutedEventArgs e)

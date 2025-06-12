@@ -56,6 +56,6 @@ WindowState="Maximized"
                 Style="{StaticResource roundMenuButton}" Click="Button_erstellePlan"/>
         </StackPanel>
 
-        <Button Content="Zurück" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Width="200" Height="60" FontSize="20"  Style="{StaticResource roundMenuButton}" Click="Button_Click"/>
+        <Button Content="Zurück" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Width="200" Height="60" FontSize="20"  Style="{StaticResource roundMenuButton}" Click="Button_Zueruck"/>
     </Grid>
 </Window>

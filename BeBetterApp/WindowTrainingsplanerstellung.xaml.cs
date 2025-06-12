@@ -108,11 +108,9 @@ namespace BeBetterApp
             }
         }
 
-
-
-
-
-        
-
+        private void Button_zuruck(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

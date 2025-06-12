@@ -31,18 +31,20 @@ namespace BeBetterApp
             windowEssensplanErstellung.Show();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-        }
+        
 
         private void Button_Koerperteile(object sender, RoutedEventArgs e)
         {
             this.Close();
             Kalorienzähler kalorienzähler = new Kalorienzähler();
             kalorienzähler.Show();
+        }
+
+        private void Button_Zueruck(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
     }
 }

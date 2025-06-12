@@ -8,7 +8,41 @@
         Title="WindowTrainingsplanerstellung" Height="450" Width="800" Background ="#FF1B1446"
         WindowStyle="none"
         WindowState="Maximized">
+
+    <Window.Resources>
+        <Style x:Key="roundMenuButton" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="20"
+                            Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#33FFFFFF"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#22FFFFFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Margin" Value="15"/>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
+        
 
         
 
@@ -17,6 +51,7 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/> 
         </Grid.RowDefinitions>
 
         <Rectangle Fill="#FF1F1A4E" Grid.Row="0" Width="auto" Height="auto"/>
@@ -29,6 +64,7 @@
                 <ColumnDefinition Width="1.5*"/>
                 <ColumnDefinition Width="1.5*"/>
                 <ColumnDefinition Width="1.5*"/>
+                
             </Grid.ColumnDefinitions>
 
             <Label Grid.Column="0"  Content="Gewicht(kg):" HorizontalAlignment="Right" Height="50" Width="auto" Foreground="White"  FontSize="30"></Label>
@@ -83,8 +119,21 @@
             <Rectangle Grid.Row="2" Fill="#FF1F1A4E"/>
         </Grid>
 
-
+        
 
         <Label x:Name="Titel" Content="TrainingsPlan erstellen" FontSize="50" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"  FontWeight="Bold"/>
+
+        <Button Grid.Row="4"
+                Content="Zurück"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Margin="10"
+                Width="200"
+                Height="60"
+                FontSize="20"
+                Click="Button_zuruck"
+                Style="{StaticResource roundMenuButton}"/>
     </Grid>
+    
+    
 </Window>
