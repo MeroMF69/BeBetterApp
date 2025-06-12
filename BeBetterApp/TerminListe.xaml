@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:BeBetterApp">
     
     <StackPanel Background="#1B1B2F" Margin="10">
-        <TextBlock Text="Deine Termine" FontSize="20" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
+        <TextBlock Text="Bevorstehender Termin:" FontSize="20" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
         <ItemsControl x:Name="TerminListControl">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
