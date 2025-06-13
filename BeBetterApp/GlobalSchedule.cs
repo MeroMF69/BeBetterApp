@@ -12,3 +12,7 @@ namespace BeBetterApp
         public static Schedule SharedSchedule { get; } = new Schedule(); // erstellt ein einziges Termin-Objekt, das überall in der App benutzt werden kann.
     }
 }
+
+
+
+
