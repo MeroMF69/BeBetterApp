@@ -27,7 +27,6 @@ namespace BeBetterApp
           
         }
 
-        
 
         private void Button_Click_Brust(object sender, RoutedEventArgs e)
         {
