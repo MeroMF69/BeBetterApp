@@ -27,7 +27,8 @@ namespace BeBetterApp
           
         }
 
-        
+        double screenWidth = SystemParameters.PrimaryScreenWidth;
+
 
         private void Button_Click_Brust(object sender, RoutedEventArgs e)
         {

@@ -57,8 +57,8 @@
             <Setter Property="Margin" Value="15"/>
         </Style>
     </Window.Resources>
-    
-    
+
+
 
 
     <Grid>
@@ -76,15 +76,33 @@
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
+                <Grid.Background>
+                    <ImageBrush ImageSource="Icons/HumanBody.png" Stretch="Uniform" AlignmentX="Center" AlignmentY="Center"/>
+                </Grid.Background>
 
-                <Image Source="pack://application:,,,/Icons/HumanBody.png" Stretch="Uniform"/>
-                <Button Grid.Row="1" Content="Zurück" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Width="200" Height="60" FontSize="20" Click="Button_zuruck" Style="{StaticResource roundMenuButton}"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="99*"/>
+                    <RowDefinition Height="37*"/>
+                    <RowDefinition Height="27*"/>
+                    <RowDefinition Height="56*"/>
+                    <RowDefinition Height="82*"/>
+                    <RowDefinition Height="149*"/>
+                </Grid.RowDefinitions>
 
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="68*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="69*"/>
+                    <ColumnDefinition Width="34*"/>
+                    <ColumnDefinition Width="65*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="Zurück" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Width="200" Height="60" FontSize="20" Click="Button_zuruck" Style="{StaticResource roundMenuButton}"  Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"/>
 
 
 
                 <!-- Bauchmuskel -->
-                <Button Width="100" HorizontalAlignment="Center" Margin="0,367,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="BauchMuskel_Click" Height="120" VerticalAlignment="Top">
+                <Button Grid.Column="2" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Grid.RowSpan="2" Click="BauchMuskel_Click"  >
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -103,7 +121,7 @@
 
 
                 <!-- Brustmuskel -->
-                <Button Width="100" Height="120" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,250,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Brust">
+                <Button x:Name ="Button_Brustmuskel"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,1,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Brust" Grid.RowSpan="2" Grid.Column="2" Grid.Row="1">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -118,11 +136,11 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                
-                
+
+
 
                 <!-- Bizep Links -->
-                <Button Width="100" Height="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="410,300,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Bizep">
+                <Button  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Bizep" Grid.Row="2" Grid.Column="1">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -140,7 +158,7 @@
 
 
                 <!-- Bizep Rechts -->
-                <Button Width="100" Height="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,300,120,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Bizep">
+                <Button  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Bizep" Grid.Row="2" Grid.Column="3" >
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -158,7 +176,7 @@
 
 
                 <!-- Trizep Links -->
-                <Button Width="100" Height="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="470,320,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Trizep">
+                <Button  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Trizep" Grid.Row="3"  Grid.Column="1">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -177,7 +195,7 @@
 
 
                 <!-- Trizep Rechts -->
-                <Button Width="100" Height="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,320,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Trizep">
+                <Button  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Trizep" Grid.Row="3"  Grid.Column="3" >
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -195,7 +213,7 @@
 
 
                 <!-- Schulter Links-->
-                <Button Width="110" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="360,190,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Schulter">
+                <Button  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Schulter" Grid.Row="1" Grid.Column="1">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
@@ -213,7 +231,7 @@
 
 
                 <!-- Schulter Rechts-->
-                <Button Width="110" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,190,0,0" Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Schulter">
+                <Button  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Cursor="Hand" Background="Transparent" BorderThickness="0" Panel.ZIndex="10" Click="Button_Click_Schulter" Grid.Row="1" Grid.Column="3" >
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
