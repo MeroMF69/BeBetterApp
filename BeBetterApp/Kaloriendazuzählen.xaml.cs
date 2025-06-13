@@ -32,6 +32,7 @@ namespace BeBetterApp
 
         private void Button_eingegeben_Click(object sender, RoutedEventArgs e)
         {
+            
             kalorien = int.Parse(textblock_kalorieeneingabe.Text);
 
             stats();
