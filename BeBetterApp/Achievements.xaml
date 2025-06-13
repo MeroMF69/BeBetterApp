@@ -1,0 +1,76 @@
+﻿<Window x:Class="BeBetterApp.Achievements"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeBetterApp"
+        mc:Ignorable="d"
+        Title="Achievements" Height="450" Width="800" Background ="#FF1B1446"
+        WindowStyle="none"
+        WindowState="Maximized">
+    <Window.Resources>
+        <Style x:Key="roundMenuButton" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        CornerRadius="20"
+                        Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#33FFFFFF"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#22FFFFFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Margin" Value="15"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="0" Fill="#FF1F1A4E"/>
+
+        <Label x:Name="Titel" Content="Leistungen" FontSize="50" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"  FontWeight="Bold"/>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Label x:Name="Label_Leistung1" Content="🔒" Grid.Row="0" Foreground="White" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label x:Name="Label_Leistung2" Content="🔒" Grid.Row="1" Foreground="White" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label x:Name="Label_Leistung3"  Content="🔒" Grid.Row="2" Foreground="White" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Button Grid.Row="2"
+        Content="Zurück"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Bottom"
+        Margin="10"
+        Width="200"
+        Height="60"
+        FontSize="20"
+        Style="{StaticResource roundMenuButton}" Click="Button_Click"/>
+
+    </Grid>
+</Window>

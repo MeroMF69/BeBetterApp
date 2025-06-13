@@ -85,15 +85,15 @@ namespace BeBetterApp
 
             if (punkte <=7000)
             {
-                Label_rank.Content = "RANK: BRONZE";
+                Image_rank.Source = new BitmapImage(new Uri("Icons/BronzeRank.png", UriKind.Relative)); 
             }
             else if (punkte > 7000 && punkte <= 31000)
             {
-                Label_rank.Content = "RANK: SILBER";
+                Image_rank.Source = new BitmapImage(new Uri("Icons/SilberRank.png", UriKind.Relative));
             }
             else
             {
-                Label_rank.Content = "RANK: DIAMANT";
+                Image_rank.Source = new BitmapImage(new Uri("Icons/DiaRank.png", UriKind.Relative));
             }
 
 
@@ -237,6 +237,12 @@ namespace BeBetterApp
                 Label_rank.Foreground = Brushes.White;
             }
 
+        }
+
+        private void Button_achievement_Click(object sender, RoutedEventArgs e)
+        {
+            Achievements achievements = new Achievements();
+            achievements.Show();
         }
     }
 }

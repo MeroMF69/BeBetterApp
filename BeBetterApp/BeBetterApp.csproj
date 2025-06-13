@@ -48,6 +48,7 @@
     <None Remove="Icons\bebetter.png" />
     <None Remove="Icons\BizepsKabelzug.gif" />
     <None Remove="Icons\BizepTraining.gif" />
+    <None Remove="Icons\BronzeRank.png" />
     <None Remove="Icons\close.png" />
     <None Remove="Icons\fitness.png" />
     <None Remove="Icons\food.png" />
@@ -160,6 +161,9 @@
     </Resource>
     <Resource Include="Icons\bebetter.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\BronzeRank.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\close.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

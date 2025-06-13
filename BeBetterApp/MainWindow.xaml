@@ -180,7 +180,9 @@
                         <Rectangle x:Name="hintergrund" Height="auto" Width="auto" Fill="#FF1F1A4E"/>
                         <StackPanel Orientation="Horizontal">
                             <Label x:Name="Label_streak" Grid.Row="0" Grid.Column="1" Content="STREAK: 0" Foreground="Gray" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center" FontSize="30" Margin="30,0,0,0" />
-                            <Label x:Name="Label_rank" Grid.Row="0" Grid.Column="1" Content="RANK: BRONZE" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center" FontSize="30" Margin="30,0,0,0" />
+                            <Label x:Name="Label_rank" Grid.Row="0" Grid.Column="1" Content="RANK:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center" FontSize="30" Margin="30,0,0,0" />
+                            <Image x:Name="Image_rank" Source="Icons/BronzeRank.png" Width="75" Height="75"/>
+                            <Button x:Name="Button_achievement" Height="auto" Width="50" Margin="20,30,0,30" Content="🏆" FontSize="20" Click="Button_achievement_Click"  />
                         </StackPanel>
                        
                         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
