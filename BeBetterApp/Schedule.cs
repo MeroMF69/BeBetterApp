@@ -68,7 +68,7 @@ namespace BeBetterApp
 
 
 
-            // Fügt alle geladenen Termine wieder in die Liste ein, damit sie im Kalender angezeigt werden.
+            // Fügt alle geladenen Termine wieder in die Liste ein => damit sie im Kalender angezeigt werden.
             foreach (var item in list) 
             {
                 Termine.Add(new Syncfusion.UI.Xaml.Scheduler.ScheduleAppointment
