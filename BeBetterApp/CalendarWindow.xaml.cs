@@ -10,7 +10,7 @@ namespace BeBetterApp
         {
             InitializeComponent();
 
-            // Globale Termine anzeigen
+            // Termine anzeigen
             scheduler.ItemsSource = GlobalSchedule.SharedSchedule.Termine;
         }
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BeBetterApp
 {
+    // Die Klasse SerializableAppointment speichert einfache Termindaten, damit man sie als Text (JSON) speichern und laden kann.
     class SerializableAppointment
     {
         public string Subject { get; set; }

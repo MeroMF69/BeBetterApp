@@ -16,13 +16,13 @@ namespace BeBetterApp
 {
     public class Schedule
     {
-        // Öffentliche Liste der Termine
+        // Liste mit allen Terminen
         public ObservableCollection<ScheduleAppointment> Termine { get; set; }
 
         // Konstruktor
         public Schedule()
         {
-            Termine = new ObservableCollection<ScheduleAppointment>();
+            Termine = new ObservableCollection<ScheduleAppointment>(); // Am anfang Termin Liste leer wenn ein neues schedule-Objekt erstellt wird 
         }
 
         // Termin hinzufügen
@@ -37,7 +37,7 @@ namespace BeBetterApp
             Termine.Remove(termin);
         }
 
-        // Alle Termine abrufen
+        // Alle Termine abrufen => Gibt ganze Liste zurück 
         public ObservableCollection<ScheduleAppointment> GetAlleTermine()
         {
             return Termine;
@@ -45,6 +45,7 @@ namespace BeBetterApp
 
         public void SaveToFile(string path)
         {
+            // Wandelt jeden Termin in eine vereinfachte Form um (damit man ihn als Text speichern kann).
             var list = Termine.Select(t => new SerializableAppointment
             {
                 Subject = t.Subject,
@@ -53,18 +54,22 @@ namespace BeBetterApp
                 Location = t.Location
             }).ToList();
 
-            File.WriteAllText(path, JsonConvert.SerializeObject(list));
+            File.WriteAllText(path, JsonConvert.SerializeObject(list)); // Speichert die Termine Daten als JSON (Text)
         }
 
-        public void LoadFromFile(string path)
+        public void LoadFromFile(string path) // Lädt Daten aus aus der Datei
         {
-            if (!File.Exists(path)) return;
+            if (!File.Exists(path)) return; // Wenn Daten nicht gibt => abbruch 
 
-            var json = File.ReadAllText(path);
-            var list = JsonConvert.DeserializeObject<List<SerializableAppointment>>(json);
+            var json = File.ReadAllText(path); // Liest den Text aus der Datei
+            var list = JsonConvert.DeserializeObject<List<SerializableAppointment>>(json); // wandelt den Text in Termin Daten um 
 
-            Termine.Clear();
-            foreach (var item in list)
+            Termine.Clear(); // Löscht alte Daten dmit die neuen eingefügt werden können 
+
+
+
+            // Fügt alle geladenen Termine wieder in die Liste ein => damit sie im Kalender angezeigt werden.
+            foreach (var item in list) 
             {
                 Termine.Add(new Syncfusion.UI.Xaml.Scheduler.ScheduleAppointment
                 {
