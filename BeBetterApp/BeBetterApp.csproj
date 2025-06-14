@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Challenges.json" />
     <None Remove="GIFS\BauchMuskel-Training\1.Crunches.gif" />
     <None Remove="GIFS\BauchMuskel-Training\2.CrunchesArmegestreckt.gif" />
     <None Remove="GIFS\BauchMuskel-Training\3.Situps.gif" />
@@ -65,6 +66,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Challenges.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="license\license.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
