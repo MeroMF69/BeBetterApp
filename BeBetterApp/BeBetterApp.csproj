@@ -21,6 +21,10 @@
     <None Remove="GIFS\BauchMuskel-Training\3.Situps.gif" />
     <None Remove="GIFS\BauchMuskel-Training\4.SitupsmitKurzhantel.gif" />
     <None Remove="GIFS\BauchMuskel-Training\5.CrunchesMaschine.gif" />
+    <None Remove="GIFS\Bein-Training\HorizontalLegPress.gif" />
+    <None Remove="GIFS\Bein-Training\LegExtension.gif" />
+    <None Remove="GIFS\Bein-Training\LegPress%2845-Degree%29.gif" />
+    <None Remove="GIFS\Bein-Training\LyingLegCurl.gif" />
     <None Remove="GIFS\Bizep-Training\1.BarbellBicepCurl.gif" />
     <None Remove="GIFS\Bizep-Training\2.HammerCurls.gif" />
     <None Remove="GIFS\Bizep-Training\3.Preacher Curls.gif" />
@@ -93,6 +97,18 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="GIFS\BauchMuskel-Training\5.CrunchesMaschine.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Bein-Training\HorizontalLegPress.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Bein-Training\LegExtension.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Bein-Training\LegPress(45-Degree).gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GIFS\Bein-Training\LyingLegCurl.gif">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="GIFS\Bizep-Training\1.BarbellBicepCurl.gif">
@@ -209,10 +225,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="GIFS\Bein-Training\" />
   </ItemGroup>
 
 </Project>

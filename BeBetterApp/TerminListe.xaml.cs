@@ -25,11 +25,14 @@ namespace BeBetterApp
             if (nächster != null)
             {
                 TerminListControl.ItemsSource = new List<ScheduleAppointment> { nächster };
+                HinweisText.Visibility = System.Windows.Visibility.Collapsed;
             }
             else
             {
                 // Option: leere Liste oder Hinweis anzeigen
                 TerminListControl.ItemsSource = null;
+                HinweisText.Text = "Im Moment keine Termine.";
+                HinweisText.Visibility = System.Windows.Visibility.Visible;
             }
         }
 

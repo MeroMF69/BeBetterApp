@@ -6,7 +6,45 @@
              xmlns:local="clr-namespace:BeBetterApp"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid Background="Transparent">
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" Padding="0" Margin="0">
+
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top">
+
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="1.Horizontall Leg Press" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage1" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage1_MouseEnter" MouseLeave="GifImage1_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="2. Leg Extension" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage2" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage2_MouseEnter" MouseLeave="GifImage2_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="3. Leg Press (45-Degree)" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage3" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage3_MouseEnter" MouseLeave="GifImage3_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Text="4. Lying Leg Curl" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <Image x:Name="GifImage4" Stretch="Uniform" MaxHeight="550" HorizontalAlignment="Center" MouseEnter="GifImage4_MouseEnter" MouseLeave="GifImage4_MouseLeave"/>
+                    </StackPanel>
+                </Border>
+
+
+
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>
