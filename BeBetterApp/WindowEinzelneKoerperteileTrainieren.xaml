@@ -247,6 +247,46 @@
                     </Button.Template>
                 </Button>
 
+                <!-- Bein Links -->
+                <Button Click="Button_Click_Bein" Grid.Row="4" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Cursor="Hand" Background="Transparent" BorderThickness="0">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Rectangle Fill="Transparent"/>
+                                <TextBlock x:Name="HoverText" Text="Bein" Foreground="White" Background="#AA000000" Padding="4" FontWeight="Bold"
+                           Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="HoverText" Property="Visibility" Value="Visible"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+                <!-- Bein Rechts -->
+                <Button Click="Button_Click_Bein" Grid.Row="4" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Cursor="Hand" Background="Transparent" BorderThickness="0">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Rectangle Fill="Transparent"/>
+                                <TextBlock x:Name="HoverText" Text="Bein" Foreground="White" Background="#AA000000" Padding="4" FontWeight="Bold"
+                           Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="HoverText" Property="Visibility" Value="Visible"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+
+
 
 
 

@@ -9,7 +9,7 @@
         <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" Padding="0" Margin="0">
 
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top">
-                <!-- Übung 1 -->
+                
                 <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
                     <StackPanel>
                         <TextBlock Text="1.Barbell Bicep Curl" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
@@ -17,7 +17,7 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Übung 2 -->
+                
                 <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
                     <StackPanel>
                         <TextBlock Text="2. Hammer Curls" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
@@ -25,7 +25,7 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Übung 2 -->
+                
                 <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
                     <StackPanel>
                         <TextBlock Text="3. Preacher Curls" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
@@ -33,7 +33,7 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Übung 2 -->
+                
                 <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
                     <StackPanel>
                         <TextBlock Text="4. Chin-ups" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
@@ -41,7 +41,7 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Übung 2 -->
+                
                 <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
                     <StackPanel>
                         <TextBlock Text="5. Cable Curls" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
@@ -49,7 +49,7 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Übung 2 -->
+                
                 <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
                     <StackPanel>
                         <TextBlock Text="6. Incline Dumbbell Curls" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
@@ -57,7 +57,7 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Übung 2 -->
+                
                 <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
                     <StackPanel>
                         <TextBlock Text="7. Zottman Curls" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
@@ -65,7 +65,7 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Übung 2 -->
+                
                 <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
                     <StackPanel>
                         <TextBlock Text="8. Reverse Grip Barbell Curls" FontSize="28" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
@@ -73,7 +73,7 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Übung 2 -->
+                
                 <Border Background="white" CornerRadius="25" Padding="20" Margin="20" HorizontalAlignment="Stretch">
                     <StackPanel>
                         <TextBlock Text="9. Spider Curls" FontSize="28" FontWeight="Bold" Foreground="black" HorizontalAlignment="Center" Margin="0,0,0,10"/>

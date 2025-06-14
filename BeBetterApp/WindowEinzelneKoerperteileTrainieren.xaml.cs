@@ -59,5 +59,10 @@ namespace BeBetterApp
             WindowSelect windowSelect = new WindowSelect();
             windowSelect.Show();
         }
+
+        private void Button_Click_Bein(object sender, RoutedEventArgs e)
+        {
+            RightContentArea.Content = new BeinTraining();
+        }
     }
 }
