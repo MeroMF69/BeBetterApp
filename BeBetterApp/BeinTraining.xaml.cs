@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,11 +27,20 @@ namespace BeBetterApp
         public BeinTraining()
         {
             InitializeComponent();
+            Log.Information("BeinTraining geladen");
 
             for (int i = 0; i < 4; i++)
             {
-                string filename = GetFilename(i);
-                _gifs[i] = new BitmapImage(new Uri($"pack://application:,,,/BeBetterApp;component/GIFs/Bein-Training/{filename}"));
+                try
+                {
+                    string filename = GetFilename(i);
+                    _gifs[i] = new BitmapImage(new Uri($"pack://application:,,,/BeBetterApp;component/GIFs/Bein-Training/{filename}"));
+                    Log.Debug($"GIF {i + 1} geladen: {filename}");
+                }
+                catch (Exception ex)
+                {
+                    Log.Error(ex, $"Fehler beim Laden von Bein-GIF {i + 1}");
+                }
             }
 
             ImageBehavior.SetAnimatedSource(GifImage1, _gifs[0]);
@@ -61,19 +71,49 @@ namespace BeBetterApp
         }
 
 
-        private void GifImage1_MouseEnter(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage1)?.Play();
-        private void GifImage1_MouseLeave(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage1)?.Pause();
+        private void GifImage1_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Log.Debug("Bein GIF 1 gestartet (MouseEnter)");
+            ImageBehavior.GetAnimationController(GifImage1)?.Play();
+        }
+        private void GifImage1_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Log.Debug("Bein GIF 1 pausiert (MouseLeave)");
+            ImageBehavior.GetAnimationController(GifImage1)?.Pause();
+        }
 
-        private void GifImage2_MouseEnter(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage2)?.Play();
-        private void GifImage2_MouseLeave(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage2)?.Pause();
+        private void GifImage2_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Log.Debug("Bein GIF 2 gestartet (MouseEnter)");
+            ImageBehavior.GetAnimationController(GifImage2)?.Play();
+        }
+        private void GifImage2_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Log.Debug("Bein GIF 2 pausiert (MouseLeave)");
+            ImageBehavior.GetAnimationController(GifImage2)?.Pause();
+        }
 
-        private void GifImage3_MouseEnter(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage3)?.Play();
-        private void GifImage3_MouseLeave(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage3)?.Pause();
+        private void GifImage3_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Log.Debug("Bein GIF 3 gestartet (MouseEnter)");
+            ImageBehavior.GetAnimationController(GifImage3)?.Play();
+        }
+        private void GifImage3_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Log.Debug("Bein GIF 3 pausiert (MouseLeave)");
+            ImageBehavior.GetAnimationController(GifImage3)?.Pause();
+        }
 
-        private void GifImage4_MouseEnter(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage4)?.Play();
-        private void GifImage4_MouseLeave(object sender, MouseEventArgs e) => ImageBehavior.GetAnimationController(GifImage4)?.Pause();
+        private void GifImage4_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Log.Debug("Bein GIF 4 gestartet (MouseEnter)");
+            ImageBehavior.GetAnimationController(GifImage4)?.Play();
+        }
+        private void GifImage4_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Log.Debug("Bein GIF 4 pausiert (MouseLeave)");
+            ImageBehavior.GetAnimationController(GifImage4)?.Pause();
+        }
 
-        
-    
     }
 }
