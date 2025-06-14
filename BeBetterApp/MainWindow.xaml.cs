@@ -215,6 +215,7 @@ namespace BeBetterApp
 
         private void Button_Ernaehrung(object sender, RoutedEventArgs e)
         {
+            
             Ernaerungselect ernaerungselect = new Ernaerungselect();
             ernaerungselect.Show();
             Log.Verbose("in Ernährung drinen");
@@ -224,11 +225,13 @@ namespace BeBetterApp
 
         private void Button_Quit(object sender, RoutedEventArgs e)
         {
+            Log.Information("App wurde beendet");
             Application.Current.Shutdown(); // ALLE Fenster schließen sich!!!!!
         }
 
         private void Button_Saved(object sender, RoutedEventArgs e)
         {
+            
             Gespeichertselect gespeichertselect = new Gespeichertselect();
             gespeichertselect.Show();
             Log.Verbose("in Gespeicherte drinen");
