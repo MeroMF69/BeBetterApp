@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using Serilog;
 
 namespace BeBetterApp
 {
@@ -26,6 +27,7 @@ namespace BeBetterApp
             if (File.Exists("Essensplan.json"))
             {
                 string jetzigerplan = File.ReadAllText("Essensplan.json");
+                Log.Verbose("Essensplan wird aufgerufen");
 
                 if (!string.IsNullOrWhiteSpace(jetzigerplan))
                 {
@@ -46,10 +48,6 @@ namespace BeBetterApp
 
             }
 
-            if (Gewicht.Text == "")
-            {
-                Gewicht.Text = "Gewicht";
-            }
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -109,11 +107,6 @@ namespace BeBetterApp
 
 
 
-
-        private void Gewicht_GotFocus(object sender, RoutedEventArgs e)
-        {
-            Gewicht.Text = string.Empty;
-        }
 
         private void Button_zuruck(object sender, RoutedEventArgs e)
         {

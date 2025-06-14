@@ -51,7 +51,7 @@
                     Style="{StaticResource roundMenuButton}"
                     Click="Button_Koerperteile"/>
 
-            <Button Content="Erstelle einen Fitnessplan"
+            <Button Content="Erstelle einen Trainingsplan"
                     Width="550" Height="140"
                     Style="{StaticResource roundMenuButton}" Click="Button_erstellePlan"/>
         </StackPanel>

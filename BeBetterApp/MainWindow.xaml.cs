@@ -12,6 +12,11 @@ using System.Collections.ObjectModel;
 using OpenAI.Chat;
 using System.IO;
 using HarfBuzzSharp;
+using System.Text.Json;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
+using System.Collections.Generic;
+using Serilog;
 
 
 
@@ -34,24 +39,42 @@ namespace BeBetterApp
         DateOnly Tag = DateOnly.FromDateTime(DateTime.Now);
         bool done = false;
 
+
+
         public MainWindow()
         {
             InitializeComponent();
+            Log.Logger = new LoggerConfiguration()
+            .WriteTo.Console()
+            .WriteTo.File("BeBetter.log", rollingInterval: RollingInterval.Day)
+            .CreateLogger();
 
-
-
-            if (File.Exists("Daten.json"))
+            Log.Verbose("Program hat gestartet ...");
+            try
             {
-                string daten = File.ReadAllText("Daten.json");
-                if (!string.IsNullOrWhiteSpace(daten))
+
+
+                if (File.Exists("Daten.json"))
                 {
-                    string[] dataSplit = daten.Split('#');
+                    string daten = File.ReadAllText("Daten.json");
+                    Log.Information("Daten wurden von Daten.json gelesen");
+                    if (!string.IsNullOrWhiteSpace(daten))
+                    {
+                        string[] dataSplit = daten.Split('#');
 
-                    streak = int.Parse(dataSplit[0]);
-                    punkte = int.Parse(dataSplit[1]);
-                    Tag = DateOnly.Parse(dataSplit[2]);
-                    done = bool.Parse(dataSplit[3]);
+                        streak = int.Parse(dataSplit[0]);
+                        punkte = int.Parse(dataSplit[1]);
+                        Tag = DateOnly.Parse(dataSplit[2]);
+                        done = bool.Parse(dataSplit[3]);
 
+                    }
+                    else
+                    {
+                        using (StreamWriter sw = new StreamWriter("Daten.json"))
+                        {
+                            sw.WriteLine($"0#0#{heute}#false");
+                        }
+                    }
                 }
                 else
                 {
@@ -60,27 +83,30 @@ namespace BeBetterApp
                         sw.WriteLine($"0#0#{heute}#false");
                     }
                 }
-            }
-            else
-            {
-                using (StreamWriter sw = new StreamWriter("Daten.json"))
-                {
-                    sw.WriteLine($"0#0#{heute}#false");
-                }
-            }
 
-            if (heute != Tag)
+                if (done == true)
+                {
+                    Label_streak.Foreground = Brushes.White;
+                    Border_challange.Background = Brushes.Gray;
+                }
+
+                if (heute != Tag)
+                {
+                    done = false;
+                    int diff = Tag.DayNumber - heute.DayNumber;
+                    if (diff > 1)
+                    {
+                        streak = 0;
+                    }
+                    using (StreamWriter sw = new StreamWriter("Daten.json"))
+                    {
+                        sw.WriteLine($"{streak}#{punkte}#{heute}#{done}");
+                    }
+                }
+            }
+            catch
             {
-                done = false;
-                int diff = Tag.DayNumber - heute.DayNumber;
-                if (diff > 1)
-                {
-                    streak = 0;
-                }
-                using (StreamWriter sw = new StreamWriter("Daten.json"))
-                {
-                    sw.WriteLine($"{streak}#{punkte}#{heute}#{done}");
-                }
+                Log.Error("Daten können nicht gelesen werden.");
             }
             Label_streak.Content = $"STREAK: {streak}";
 
@@ -97,10 +123,14 @@ namespace BeBetterApp
                 Image_rank.Source = new BitmapImage(new Uri("Icons/DiaRank.png", UriKind.Relative));
             }
 
-
+            /*
             if (File.Exists("Challenges.json"))
             {
-                string Challage_daten = File.ReadLines("Challenges.json").First();
+
+                string Challage_daten = File.ReadLines("Challenges.json").FirstOrDefault();
+                            Log.Information("Daten wurden von Challenges.json gelesen");
+
+
 
                 if (!string.IsNullOrWhiteSpace(Challage_daten))
                 {
@@ -108,13 +138,41 @@ namespace BeBetterApp
 
                     if (Tag == heute)
                     {
-                        Textblock_challange.Text = Challage_daten;
+                        if (File.Exists("Aufgabe.json"))
+                        {
+                            string aufgabe = File.ReadLines("Aufgabe.json").FirstOrDefault();
+                               Log.Information("Daten wurden von Aufgabe.json gelesen");
+
+                            if (!string.IsNullOrWhiteSpace(Challage_daten))
+                            {
+                                Textblock_challange.Text = aufgabe;
+                            }
+                            else
+                            {
+                                string challangenow = KICallenges(punkte);
+                                Textblock_challange.Text = challangenow;
+                                using (StreamWriter sw = new StreamWriter("Aufgabe.json"))
+                                {
+                                    sw.WriteLine(challangenow);
+                                }
+
+                            }
+                        }
+                        else
+                        {
+                            string challangenow = KICallenges(punkte);
+                            Textblock_challange.Text = challangenow;
+                            using (StreamWriter sw = new StreamWriter("Aufgabe.json"))
+                            {
+                                sw.WriteLine(challangenow);
+                            }
+                        }
                     }
                     else
                     {
                         string challangenow = KICallenges(punkte);
                         Textblock_challange.Text = challangenow;
-                        using (StreamWriter sw = new StreamWriter("Challenges.json"))
+                        using (StreamWriter sw = new StreamWriter("Aufgabe.json"))
                         {
                             sw.WriteLine(challangenow);
                         }
@@ -124,23 +182,16 @@ namespace BeBetterApp
                 }
                 else
                 {
-                    string challangenow = KICallenges(punkte);
-                    Textblock_challange.Text = challangenow;
-                    using (StreamWriter sw = new StreamWriter("Challenges.json"))
-                    {
-                        sw.WriteLine(challangenow);
-                    }
+                    Textblock_challange.Text = "Error 104: Kontaktiere bitte den suppport";
                 }
             }
             else
             {
-                string challangenow = KICallenges(punkte);
-                Textblock_challange.Text = challangenow;
-                using (StreamWriter sw = new StreamWriter("Challenges.json"))
-                {
-                    sw.WriteLine(challangenow);
-                }
+                Textblock_challange.Text = "Error 104: Kontaktiere bitte den suppport";
+                            Log.Error("Fehler bei Challanges ...");
             }
+            */
+
 
 
 
@@ -159,13 +210,14 @@ namespace BeBetterApp
             
             WindowSelect window = new WindowSelect();
             window.Show();
-            
+            Log.Verbose("in Fitness drinen");
         }
 
         private void Button_Ernaehrung(object sender, RoutedEventArgs e)
         {
             Ernaerungselect ernaerungselect = new Ernaerungselect();
             ernaerungselect.Show();
+            Log.Verbose("in Ernährung drinen");
         }
 
  
@@ -177,7 +229,9 @@ namespace BeBetterApp
 
         private void Button_Saved(object sender, RoutedEventArgs e)
         {
-
+            Gespeichertselect gespeichertselect = new Gespeichertselect();
+            gespeichertselect.Show();
+            Log.Verbose("in Gespeicherte drinen");
         }
 
 
@@ -186,6 +240,7 @@ namespace BeBetterApp
             // Kalender öffnen
             CalendarWindow kalender = new CalendarWindow();
             kalender.ShowDialog();
+            Log.Verbose("in Organisation drinen drinen");
 
             // Terminliste aktualisieren
             terminListeControl.Aktualisieren();
@@ -213,13 +268,76 @@ namespace BeBetterApp
 
         private string KICallenges(int Punkte)
         {
-            ChatClient client = new(model: "gpt-3.5-turbo", apiKey: Properties.Settings.Default.OPENAI_KEY);
+            Random rnd = new Random();
+            int zahl = rnd.Next(1, 4);
 
-            ChatCompletion completion = client.CompleteChat($"Gib mir eine Fittnes-Challange kann yoga,push up usw sein, rechne mit Punkten:{Punkte} aus wieviel man braucht nimmm die Punkte und dividiere sie um 7000 die machst du mal bei sachen wie plans machst dann eif 30 sek dazu und bei joggen 2 min dazu ist dir überlassen gib nur aus: Mach (die anzahl oder die Zeit) (lang) (die Challange) schreib nichts dazu nur die sache die ich dir angegeben habe.");
 
-            string save = completion.Content[0].Text; 
+            string path = "Challenges.json"; // Datei im Ausgabeverzeichnis (Debug-Ordner)
+            string jsonString = File.ReadAllText(path);
 
-            return save;
+            
+
+            TrainingsData data = JsonSerializer.Deserialize<TrainingsData>(jsonString);
+
+
+            string[] arrayReps = data.repetitive.ToArray();
+            string[] arrayShort = data.shortDuration.ToArray();
+            string[] arrayLong = data.longDuration.ToArray();
+
+            if (zahl == 1)
+            {
+                int länge = arrayReps.Length;
+
+                zahl = rnd.Next(0,länge);
+
+                string aufgabe = arrayReps[zahl];
+
+                int wiederholungen = punkte / 7000 +10;
+
+                string finale = $"{wiederholungen} {aufgabe}";
+
+                return finale;
+            }
+
+            else if (zahl == 3)
+            {
+                int länge = arrayLong.Length;
+
+                zahl = rnd.Next(0, länge);
+
+                string aufgabe = arrayLong[zahl];
+
+                int wiederholungen = punkte / 7000 +10;
+
+                string finale = $"{wiederholungen} {aufgabe}";
+                return finale;
+            }
+            else
+            {
+                int länge = arrayShort.Length;
+
+                zahl = rnd.Next(0, länge);
+
+                string aufgabe = arrayShort[zahl];
+
+                int wiederholungen = (punkte / 7000)*10 + 30;
+                string finale = "";
+
+                if (wiederholungen >= 60)
+                {
+                    double wiederholungeninmin = wiederholungen / 60;
+                    double kommateil = zahl - Math.Truncate(wiederholungeninmin);
+                    kommateil = kommateil * 60;
+                    finale = $"{Math.Truncate(wiederholungeninmin)}:{kommateil} min {aufgabe}";
+                }
+                else
+                {
+                    finale = $"{wiederholungen} sek {aufgabe}";
+                }
+
+                return finale;
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -227,8 +345,11 @@ namespace BeBetterApp
             if (done == false)
             {
                 streak = streak + 1;
+                
                 punkte = punkte + (streak / 100+1)*1000;
                 Label_streak.Content = $"STREAK: {streak}";
+                Label_streak.Foreground = Brushes.White;
+                Border_challange.Background = Brushes.Gray;
                 using (StreamWriter sw = new StreamWriter("Daten.json"))
                 done = true;
                 using (StreamWriter sw = new StreamWriter("Daten.json"))

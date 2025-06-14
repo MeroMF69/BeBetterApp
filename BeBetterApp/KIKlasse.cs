@@ -11,6 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Shapes;
 using OpenAI;
 using OpenAI.Chat;
+using Serilog;
 
 namespace BeBetterApp
 {
@@ -24,9 +25,11 @@ namespace BeBetterApp
                 ausgabe.Text = "Ihr Trainigsplan wird erstellt bitte warten!"; // Dass der Nutzer weiß dass es geladen wird
 
                 ChatClient client = new(model: "gpt-4o", apiKey: Properties.Settings.Default.OPENAI_KEY);
+                Log.Information("API Key und gpt modell wurde aufgenommen");
                 // Hier ist mein API Key und welche version von Chat gpt es benutzen soll
 
                 ChatCompletion completion = client.CompleteChat(aufforderung);
+                Log.Verbose("Frage an KI wurde gestellt");
                 // Hier wird Chatgpt eine Frage gestellt
 
                 string save = completion.Content[0].Text; // Hier wird die antwort abgespeichert
@@ -34,6 +37,7 @@ namespace BeBetterApp
                 using (StreamWriter sw = new StreamWriter(Speicherort))
                 {
                     sw.WriteLine(save); //Hier wird die Datei abgespeichert dass man auch den gelichen Trainungsplan benutzt
+                    Log.Verbose("Plan wird abgespeichert");
 
                 }
 
@@ -45,6 +49,7 @@ namespace BeBetterApp
             catch
             {
                 ausgabe.Text = "Wie es aussieht haben wir ein Problem!:( Bitte kontoliere deine Internetverbindung.";
+                Log.Error("Etwas hat bei KI nicht funktioniert");
             }
 
         }

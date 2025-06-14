@@ -81,9 +81,10 @@
     x:Name="preferänz"
     Width="150"
     Height="50"
+                FontSize="20"
                 Margin="5"
     Background="LightSlateGray"
-    Foreground="White">
+ >
 
                 <ComboBoxItem Content="abnehmen" />
                 <ComboBoxItem Content="muskelaufbau" />

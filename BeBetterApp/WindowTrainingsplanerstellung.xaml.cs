@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using Serilog;
 
 
 namespace BeBetterApp
@@ -34,6 +35,7 @@ namespace BeBetterApp
             {
                 
                 string jetzigerplan = File.ReadAllText("Trainingsplan.json");
+                Log.Verbose("Trainingsplan.json wird aufgerufen");
 
                 if (!string.IsNullOrWhiteSpace(jetzigerplan))
                 {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,7 @@ namespace BeBetterApp
             this.Close();
             WindowEssensplanErstellung windowEssensplanErstellung = new WindowEssensplanErstellung();
             windowEssensplanErstellung.Show();
+            Log.Verbose("Fittnesplan wird aufgerufen");
         }
 
         
@@ -38,6 +40,7 @@ namespace BeBetterApp
             this.Close();
             Kalorienzähler kalorienzähler = new Kalorienzähler();
             kalorienzähler.Show();
+            Log.Verbose("Körperteile werden aufgerufen");
         }
 
         private void Button_Zueruck(object sender, RoutedEventArgs e)

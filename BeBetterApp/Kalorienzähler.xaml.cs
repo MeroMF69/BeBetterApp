@@ -17,6 +17,7 @@ using OpenAI.Chat;
 using System.IO;
 using LiveChartsCore.SkiaSharpView.Painting;
 using SkiaSharp;
+using Serilog;
 
 
 namespace BeBetterApp
@@ -35,6 +36,9 @@ namespace BeBetterApp
         {
             Kaloriendazuzählen kdz = new Kaloriendazuzählen();
             kdz.stats();
+
+
+            Log.Verbose("Diagram wird erstellt");
 
             Series = new ISeries[]
             {
@@ -62,6 +66,7 @@ namespace BeBetterApp
                 }
             };
 
+            Log.Verbose("Diagram wurde erstellt");
             InitializeComponent();
             DataContext = this;
         }
@@ -73,6 +78,8 @@ namespace BeBetterApp
             {
 
                 UpdateChart();
+
+
             }
         }
 
@@ -85,6 +92,7 @@ namespace BeBetterApp
 
         public void UpdateChart()
         {
+            Log.Verbose("Diagram wurde geupdated");
             Kaloriendazuzählen kdz = new Kaloriendazuzählen();
             kdz.stats();
 

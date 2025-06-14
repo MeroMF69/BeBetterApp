@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -32,13 +33,21 @@ namespace BeBetterApp
 
         private void Button_eingegeben_Click(object sender, RoutedEventArgs e)
         {
-            kalorien = int.Parse(textblock_kalorieeneingabe.Text);
+            try
+            {
+                kalorien = int.Parse(textblock_kalorieeneingabe.Text);
+            }
+            catch
+            {
+                Button_eingegeben.Background = Brushes.LightCoral;
+            }
 
             stats();
             kalorientage[6] = kalorientage[6]+kalorien;
 
             using (StreamWriter sw = new StreamWriter("Kalorienspeicher.json"))
             {
+                Log.Verbose("In Kalorienspeicher.json wird was reingeschriben");
                 sw.WriteLine($"{kalorientage[0]}#{kalorientage[1]}#{kalorientage[2]}#{kalorientage[3]}#{kalorientage[4]}#{kalorientage[5]}#{kalorientage[6]}#{heute}");
 
             }
@@ -60,7 +69,7 @@ namespace BeBetterApp
 
 
 
-
+                    Log.Verbose("Kalorienspeicher.json wird aufgerufen");
                     string data = sr.ReadLine();
                     kl.DeserializeFromCsv(data);
                 }
@@ -103,6 +112,8 @@ namespace BeBetterApp
 
                         using (StreamWriter sw = new StreamWriter("Kalorienspeicher.json"))
                         {
+
+                        Log.Verbose("Kalorienspeicher.json wird geschrieben");
                         sw.WriteLine($"{kalorientage[0]}#{kalorientage[1]}#{kalorientage[2]}#{kalorientage[3]}#{kalorientage[4]}#{kalorientage[5]}#{kalorientage[6]}#{heute}");
 
                         }
@@ -117,11 +128,18 @@ namespace BeBetterApp
             {
                 using (StreamWriter sw = new StreamWriter("Kalorienspeicher.json"))
                 {
+
+                    Log.Verbose("Kalorienspeicher.json wird geschrieben");
                     sw.WriteLine($"0#0#0#0#0#0#{kalorien}#{heute}");
 
                 }
             }
             
+        }
+
+        private void Button_zuruck(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
