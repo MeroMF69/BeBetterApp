@@ -5,6 +5,13 @@
     
     <StackPanel Background="#1B1B2F" Margin="10">
         <TextBlock Text="Bevorstehender Termin:" FontSize="20" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
+        <TextBlock x:Name="HinweisText"
+           Text=""
+           Foreground="LightGray"
+           FontStyle="Italic"
+           Margin="0,0,0,10"
+           Visibility="Collapsed"/>
+
         <ItemsControl x:Name="TerminListControl">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>

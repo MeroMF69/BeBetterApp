@@ -8,6 +8,7 @@ using Syncfusion.UI.Xaml.Scheduler;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
+using System.Windows;
 
 
 
@@ -34,7 +35,9 @@ namespace BeBetterApp
         // Termin entfernen
         public void RemoveTermin(ScheduleAppointment termin)
         {
-            Termine.Remove(termin);
+            
+            Termine.Remove(termin); // Entfernt den Termin aus der Liste 
+            SaveToFile("termine.json"); // Speichert die Aktulisierte Liste in die Datei 
         }
 
         // Alle Termine abrufen => Gibt ganze Liste zurück 
