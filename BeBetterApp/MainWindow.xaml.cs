@@ -49,6 +49,13 @@ namespace BeBetterApp
             .WriteTo.File("BeBetter.log", rollingInterval: RollingInterval.Day)
             .CreateLogger();
 
+            using (StreamWriter sw = new StreamWriter("Challengesnes.json"))
+            {
+                sw.WriteLine("{\r\n  \"repetitive\": [\r\n    \"Push-Ups\",\r\n    \"Sit-Ups\",\r\n    \"Squats\",\r\n    \"Jumping Jacks\",\r\n    \"Lunges\",\r\n    \"Burpees\"\r\n  ],\r\n  \"shortDuration\": [\r\n    \"Plank\",\r\n    \"Wall Sit\",\r\n    \"High Knees\",\r\n    \"Mountain Climbers\",\r\n    \"Jump Hold\",\r\n    \"Static Lunge Hold\"\r\n  ],\r\n  \"longDuration\": [\r\n    \"Jogging\",\r\n    \"Radfahren\",\r\n    \"Spazieren\",\r\n    \"Seilspringen\",\r\n    \"Wandern\",\r\n    \"Tanzen\"\r\n  ]\r\n}");
+            }
+
+
+
             Log.Verbose("Program hat gestartet ...");
             try
             {
