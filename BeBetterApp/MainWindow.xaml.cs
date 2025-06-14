@@ -123,11 +123,11 @@ namespace BeBetterApp
                 Image_rank.Source = new BitmapImage(new Uri("Icons/DiaRank.png", UriKind.Relative));
             }
 
-            /*
-            if (File.Exists("Challenges.json"))
+            
+            if (File.Exists("Challengesnes.json"))
             {
 
-                string Challage_daten = File.ReadLines("Challenges.json").FirstOrDefault();
+                string Challage_daten = File.ReadLines("Challengesnes.json").FirstOrDefault();
                             Log.Information("Daten wurden von Challenges.json gelesen");
 
 
@@ -183,14 +183,15 @@ namespace BeBetterApp
                 else
                 {
                     Textblock_challange.Text = "Error 104: Kontaktiere bitte den suppport";
+                    Log.Error("Die Challanges file ist leer");
                 }
             }
             else
             {
                 Textblock_challange.Text = "Error 104: Kontaktiere bitte den suppport";
-                            Log.Error("Fehler bei Challanges ...");
+                            Log.Error("Die Challanges file existiert nicht mehr");
             }
-            */
+            
 
 
 
@@ -275,7 +276,7 @@ namespace BeBetterApp
             int zahl = rnd.Next(1, 4);
 
 
-            string path = "Challenges.json"; // Datei im Ausgabeverzeichnis (Debug-Ordner)
+            string path = "Challengesnes.json"; // Datei im Ausgabeverzeichnis (Debug-Ordner)
             string jsonString = File.ReadAllText(path);
 
             
