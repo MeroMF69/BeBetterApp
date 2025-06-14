@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
+using Serilog;
 using Syncfusion.Licensing;
 using Syncfusion.SfSkinManager;
 
@@ -34,6 +35,29 @@ namespace BeBetterApp
             // Fenster starten mit Übergabe
             var mainWindow = new MainWindow();
             mainWindow.Show();
+
+
+
+            Log.Logger = new LoggerConfiguration()
+            .WriteTo.Console()
+            .WriteTo.File("BeBetter.log", rollingInterval: RollingInterval.Day)
+            .CreateLogger();
+
+            Log.Information("BeBetterApp gestartet");
+
+            base.OnStartup(e);
+
+
+
+
+        }
+
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            Log.Information("BeBetterApp wird beendet");
+            Log.CloseAndFlush();
+            base.OnExit(e);
         }
     }
 }

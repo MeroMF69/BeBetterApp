@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using Serilog;
 using Syncfusion.UI.Xaml.Scheduler;
 
 namespace BeBetterApp
@@ -9,6 +10,7 @@ namespace BeBetterApp
         public CalendarWindow()
         {
             InitializeComponent();
+            Log.Information("CalendarWindow geöffnet");
 
             // Termine anzeigen
             scheduler.ItemsSource = GlobalSchedule.SharedSchedule.Termine;
@@ -16,6 +18,7 @@ namespace BeBetterApp
 
         private void Button_Zurueck_Click(object sender, RoutedEventArgs e)
         {
+            Log.Information("Kalender wurde geschlossen");
             this.Close();
         }
     }
