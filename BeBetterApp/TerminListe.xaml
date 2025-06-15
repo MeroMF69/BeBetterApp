@@ -12,7 +12,8 @@
            Margin="0,0,0,10"
            Visibility="Collapsed"/>
 
-        <ItemsControl x:Name="TerminListControl">
+        <ItemsControl x:Name="TerminListControl"
+              ItemsSource="{Binding Termine}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Border Background="#333" CornerRadius="10" Padding="10" Margin="0,5">

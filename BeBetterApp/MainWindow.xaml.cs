@@ -217,7 +217,7 @@ namespace BeBetterApp
         {
             
             WindowSelect window = new WindowSelect();
-            window.Show();
+            window.ShowDialog();
             Log.Verbose("in Fitness drinen");
         }
 

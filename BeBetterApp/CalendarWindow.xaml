@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
 
         
-        <syncfusion:SfScheduler x:Name="scheduler" ViewType="Week" FontSize="14" Background="#1B1B2F" Foreground="White" Grid.Row="0" />
+        <syncfusion:SfScheduler x:Name="scheduler" ViewType="Week" FontSize="14" Background="#1B1B2F" Foreground="White" Grid.Row="0"/>
 
        
         <Grid Grid.Row="1">

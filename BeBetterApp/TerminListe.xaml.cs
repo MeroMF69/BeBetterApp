@@ -11,8 +11,8 @@ namespace BeBetterApp
         public TerminListe()
         {
             InitializeComponent();
-            TerminListControl.ItemsSource = GlobalSchedule.SharedSchedule.Termine;
-            
+            DataContext = GlobalSchedule.SharedSchedule;
+
         }
 
         private void LadeNächstenTermin()
@@ -41,5 +41,8 @@ namespace BeBetterApp
         {
             LadeNächstenTermin();
         }
+
+
+
     }
 }

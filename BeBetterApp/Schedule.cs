@@ -24,12 +24,14 @@ namespace BeBetterApp
         public Schedule()
         {
             Termine = new ObservableCollection<ScheduleAppointment>(); // Am anfang Termin Liste leer wenn ein neues schedule-Objekt erstellt wird 
+            LoadFromFile("termine.json");
         }
 
         // Termin hinzufügen
         public void AddTermin(ScheduleAppointment termin)
         {
-            Termine.Add(termin);
+            //Termine.Add(termin);
+            SaveToFile("termine.json"); // Speichere Änderungen sofort
         }
 
         // Termin entfernen
