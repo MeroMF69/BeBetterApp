@@ -18,6 +18,7 @@ using System.IO;
 using LiveChartsCore.SkiaSharpView.Painting;
 using SkiaSharp;
 using Serilog;
+using System.Globalization;
 
 
 namespace BeBetterApp
@@ -32,6 +33,10 @@ namespace BeBetterApp
         public Axis[] XAxes { get; set; }
         public Axis[] YAxes { get; set; }
 
+        DateTime heute = DateTime.Today;
+
+        DayOfWeek wochentag = DateTime.Today.DayOfWeek;
+
         public Kalorienzähler()
         {
             Kaloriendazuzählen kdz = new Kaloriendazuzählen();
@@ -39,6 +44,17 @@ namespace BeBetterApp
 
 
             Log.Verbose("Diagram wird erstellt");
+
+            DateTime gestern = heute.AddDays(-1);
+            DateTime Vor2Tagen = heute.AddDays(-2);
+            DateTime Vor3Tagen = heute.AddDays(-3);
+            DateTime Vor4Tagen = heute.AddDays(-4);
+            DateTime Vor5Tagen = heute.AddDays(-5);
+            DateTime Vor6Tagen = heute.AddDays(-6);
+
+            var de = new CultureInfo("de-DE");
+
+
 
             Series = new ISeries[]
             {
@@ -61,7 +77,7 @@ namespace BeBetterApp
             {
                 new Axis
                 {
-                    Labels = new[] { "Vor 6 Tagen", "Vor 5 Tgaen", "Vor 4 Tagen", "Vor 3 Tagen", "Vor 2 Tagen", "Gestern", "Heute" },
+                    Labels = new[] { $"{Vor6Tagen.ToString("dddd", de)}", $"{Vor5Tagen.ToString("dddd", de)}", $"{Vor4Tagen.ToString("dddd", de)}", $"{Vor3Tagen.ToString("dddd", de)}", $"{Vor2Tagen.ToString("dddd", de)}", $"{gestern.ToString("dddd", de)}", $"{heute.ToString("dddd", de)}" },
                     
                 }
             };
