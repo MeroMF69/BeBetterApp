@@ -46,7 +46,7 @@ namespace BeBetterApp
             InitializeComponent();
             Log.Logger = new LoggerConfiguration()
             .WriteTo.Console()
-            .WriteTo.File("BeBetter.log", rollingInterval: RollingInterval.Day)
+            .WriteTo.File("BeBetter.log")
             .CreateLogger();
 
             using (StreamWriter sw = new StreamWriter("Challengesnes.json"))
