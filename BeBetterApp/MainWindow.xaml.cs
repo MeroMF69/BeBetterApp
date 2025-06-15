@@ -91,11 +91,7 @@ namespace BeBetterApp
                     }
                 }
 
-                if (done == true)
-                {
-                    Label_streak.Foreground = Brushes.White;
-                    Border_challange.Background = Brushes.Gray;
-                }
+
 
                 if (heute != Tag)
                 {
@@ -114,6 +110,11 @@ namespace BeBetterApp
             catch
             {
                 Log.Error("Daten können nicht gelesen werden.");
+            }
+            if (done == true)
+            {
+                Label_streak.Foreground = Brushes.White;
+                Border_challange.Background = Brushes.Gray;
             }
             Label_streak.Content = $"STREAK: {streak}";
 
