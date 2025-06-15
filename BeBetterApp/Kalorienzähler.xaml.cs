@@ -28,10 +28,10 @@ namespace BeBetterApp
     /// </summary>
     public partial class Kalorienzähler : Window
     {
-        public ISeries[] Series { get; set; }
+        public ISeries[] Series { get; set; } // enthält Daten
 
-        public Axis[] XAxes { get; set; }
-        public Axis[] YAxes { get; set; }
+        public Axis[] XAxes { get; set; }  // beschriftung von der x achse
+        public Axis[] YAxes { get; set; } // beschriftung con y achse
 
         DateTime heute = DateTime.Today;
 
@@ -62,7 +62,7 @@ namespace BeBetterApp
                 {
                     Values = kdz.kalorientage
                 }
-            };
+            }; // LineSeries<int> erzeugt eine Linien-Reihe mit ganzzahligen Werten.
             YAxes = new Axis[]
             {
                 new Axis
