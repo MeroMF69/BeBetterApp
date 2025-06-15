@@ -69,8 +69,7 @@ namespace BeBetterApp
             var json = File.ReadAllText(path); // Liest den Text aus der Datei
             var list = JsonConvert.DeserializeObject<List<SerializableAppointment>>(json); // wandelt den Text in Termin Daten um 
 
-            Termine.Clear(); // Löscht alte Daten dmit die neuen eingefügt werden können 
-
+            
 
 
             // Fügt alle geladenen Termine wieder in die Liste ein => damit sie im Kalender angezeigt werden.
