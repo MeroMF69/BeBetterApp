@@ -268,7 +268,6 @@ namespace BeBetterApp
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            GlobalSchedule.SharedSchedule.LoadFromFile(speicherPfad); // Lädt alle Termine aus der Datei und speichert sie in der globalen Terminliste 
             terminListeControl.Aktualisieren(); // Aktulisiert Anzeige in der TErminliste im FEnster 
 
         }

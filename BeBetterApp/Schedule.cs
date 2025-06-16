@@ -24,7 +24,7 @@ namespace BeBetterApp
         public Schedule()
         {
             Termine = new ObservableCollection<ScheduleAppointment>(); // Am anfang Termin Liste leer wenn ein neues schedule-Objekt erstellt wird 
-            LoadFromFile("termine.json"); // Wird von der Json Datei geladen 
+            LoadFromFile_("termine.json"); // Wird von der Json Datei geladen 
         }
 
         // Termin hinzufügen
@@ -62,9 +62,12 @@ namespace BeBetterApp
             File.WriteAllText(path, JsonConvert.SerializeObject(list)); // Speichert die Termine Daten als JSON (Text)
         }
 
-        public void LoadFromFile(string path) // Lädt Daten aus aus der Datei
+        public void LoadFromFile_(string path) // Lädt Daten aus aus der Datei
         {
+            Termine.Clear(); //cleart liste das sie leer ist
+
             if (!File.Exists(path)) return; // Wenn Daten nicht gibt => abbruch 
+
 
             var json = File.ReadAllText(path); // Liest den Text aus der Datei
             var list = JsonConvert.DeserializeObject<List<SerializableAppointment>>(json); // wandelt den Text in Termin Daten um 
@@ -78,7 +81,7 @@ namespace BeBetterApp
                     Subject = item.Subject,
                     StartTime = item.StartTime,
                     EndTime = item.EndTime,
-                    Location = item.Location
+                    Location = item.Location,
                 });
             }
         }
