@@ -11,19 +11,21 @@ namespace BeBetterApp
         public TerminListe()
         {
             InitializeComponent();
-            DataContext = GlobalSchedule.SharedSchedule;
+            DataContext = GlobalSchedule.SharedSchedule; // verbindet die UI mit den Terminen aus GlobalSchedule.SharedSchedule.
 
         }
 
         private void LadeNächstenTermin()
         {
+            // Sucht den frühesten Termin und gibt dann den frühesten zurück 
             var nächster = GlobalSchedule.SharedSchedule.Termine
                 .Where(t => t.StartTime > DateTime.Now)
                 .OrderBy(t => t.StartTime)
-                .FirstOrDefault(); // nur der früheste zukünftige Termin
+                .FirstOrDefault(); 
 
             if (nächster != null)
             {
+                // Wenn der Zukünftige Termin gefunden wurde wird er dann im Main angezeigt 
                 TerminListControl.ItemsSource = new List<ScheduleAppointment> { nächster };
                 HinweisText.Visibility = System.Windows.Visibility.Collapsed;
             }
