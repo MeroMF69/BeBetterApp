@@ -18,7 +18,7 @@ namespace BeBetterApp
 
         private void Button_Zurueck_Click(object sender, RoutedEventArgs e)
         {
-            // Log.Information("Kalender wurde geschlossen");
+            Log.Information("Kalender wurde geschlossen");
             this.Close();
         }
 
