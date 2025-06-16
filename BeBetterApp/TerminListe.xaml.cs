@@ -29,14 +29,14 @@ namespace BeBetterApp
             }
             else
             {
-                // Option: leere Liste oder Hinweis anzeigen
+                // Wenn es momentan kein Termin gibt 
                 TerminListControl.ItemsSource = null;
                 HinweisText.Text = "Im Moment keine Termine.";
                 HinweisText.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
-        // Falls du später manuell aktualisieren willst
+        
         public void Aktualisieren()
         {
             LadeNächstenTermin();

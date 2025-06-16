@@ -24,7 +24,7 @@ namespace BeBetterApp
         public Schedule()
         {
             Termine = new ObservableCollection<ScheduleAppointment>(); // Am anfang Termin Liste leer wenn ein neues schedule-Objekt erstellt wird 
-            LoadFromFile("termine.json");
+            LoadFromFile("termine.json"); // Wird von der Json Datei geladen 
         }
 
         // Termin hinzufügen
@@ -68,9 +68,6 @@ namespace BeBetterApp
 
             var json = File.ReadAllText(path); // Liest den Text aus der Datei
             var list = JsonConvert.DeserializeObject<List<SerializableAppointment>>(json); // wandelt den Text in Termin Daten um 
-
-            Termine.Clear(); // Löscht alte Daten dmit die neuen eingefügt werden können 
-
 
 
             // Fügt alle geladenen Termine wieder in die Liste ein => damit sie im Kalender angezeigt werden.
